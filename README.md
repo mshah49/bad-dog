@@ -11,6 +11,7 @@ I just wanted to have fun with markdown so I decided to write the readme using i
 We have done nothing at all! I uploaded a **sample** level design that we can use for our first duel... Here are things we need to do before then:
 
 For Development Team:
+
 1. Player movement, left,right, jumping
 2. Player Shooting, left, right, and upwards when up key is pressed
 
