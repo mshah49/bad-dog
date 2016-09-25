@@ -25,7 +25,7 @@ For Development Team:
 
 For Art Team
 
-1. Main Character Sprites [start with interactive stance] (walking left and right, jumping)
+1. Main Character Sprites , start with interactive/balanced stance (walking left and right, jumping)
 2. Player Shooting Animation (left,right, and up)
 
 3. Enemy Sprite - walking animation, attacking animation
