@@ -13,28 +13,29 @@ We have done nothing at all! I uploaded a **sample** level design that we can us
 For Development Team:
 
 1. Player movement, left,right, jumping
-2. Player Shooting, left, right, and upwards when up key is pressed
+2. Player attacking, left, right, and upwards when up key is pressed (null if brawler)
 
-3. Enemy AI + shooting (which enemy will you choose to showcase?)
+3. Enemy AI + attacking (which enemy will you choose to showcase? I vote melee)
 
 4. Heavy Stance 
 5. Mobility Stance
-6. Interactive Stance
+6. Brawler Stance
 
-7. Switching between stances (state machine?)
+7. Switching between stances (state machine will be used for animation, scripts will control attribute changes)
 
 For Art Team
 
-1. Main Character Sprites , start with interactive/balanced stance (walking left and right, jumping)
+1. Main Character Sprites , start with any stance you'd like (walking left and right, jumping)
 2. Player Shooting Animation (left,right, and up)
 
 3. Enemy Sprite - walking animation, attacking animation
 
 4. Heavy Stance Sprite and associated animations
 5. Mobility Stance Sprite and associated animations
+6. Brawler Stance Sprite and associated animations
 
-6. Background Art
-7. Level Art (how the ground looks, how the platforms look, the pits etc.)
+7. Background Art
+8. Level Art (how the ground looks, how the platforms look, the pits etc.)
 
-8. Boss Sprite and associated animations
+9. Boss Sprite and associated animations
 
