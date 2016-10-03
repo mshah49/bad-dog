@@ -1,4 +1,4 @@
-MCB_JUMP
+player jump
 
 For putting together the jumping animation for brawler:
 
