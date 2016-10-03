@@ -11,7 +11,7 @@ I just wanted to have fun with markdown so I decided to write the readme using i
 We have done nothing at all! I uploaded a **sample** level design that we can use for our first duel... Here are things we need to do before then:
 
 ### Version 1.1.0
-We are making progress! I updated the below list with things we have done and what still needs to be done. I'll use this to keep track of our progress.
+We are making progress! I updated the below list with things we have done and what still needs to be done. I'll use this to keep track of our progress. In this version we have done player base movement, enemy movement and AI(seeing and moving towards player) and we have gotten a bunch of awesome sprites to work with! WooOoOoOOO 
 
 For Development Team:
 
