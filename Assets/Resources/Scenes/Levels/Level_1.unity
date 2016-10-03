@@ -720,7 +720,7 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1151912829}
   m_UseAutoMass: 0
-  m_Mass: 0.22579205
+  m_Mass: 0.3779897
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -804,12 +804,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a50ade54c83c0647ba596e34bf5088d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 6
+  playerHealth: 5
+  playerSpeed: 1
+  playerMaxSpeed: 6
+  playerJump: 1
+  playerJumpHeight: 4
+  playerDoubleJump: 0
+  playerAttack: 3
+  playerFireRate: 1
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
   groundCheck: {fileID: 1596029415}
-  jumpHeight: 8
 --- !u!1 &1380960610
 GameObject:
   m_ObjectHideFlags: 0
