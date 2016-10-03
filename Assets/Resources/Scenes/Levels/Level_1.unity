@@ -697,7 +697,7 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: -0.15}
   serializedVersion: 2
-  m_Radius: 0.095801026
+  m_Radius: 0.116858095
 --- !u!61 &1151912831
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -711,7 +711,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0.09972608}
   serializedVersion: 2
-  m_Size: {x: 0.21324801, y: 0.30792505}
+  m_Size: {x: 0.24975437, y: 0.30792505}
 --- !u!50 &1151912832
 Rigidbody2D:
   serializedVersion: 2
@@ -807,7 +807,6 @@ MonoBehaviour:
   playerHealth: 5
   playerSpeed: 1
   playerMaxSpeed: 6
-  playerJump: 1
   playerJumpHeight: 4
   playerDoubleJump: 0
   playerAttack: 3

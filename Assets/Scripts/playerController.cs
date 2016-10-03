@@ -49,18 +49,27 @@ public class playerController : MonoBehaviour {
 		playerGrounded = Physics2D.OverlapCircle(groundCheck.position,groundCheckRadius,groundLayer);
 
 		//playerMovement
-		float move = Input.GetAxis ("Horizontal");
-		animator.SetFloat ("Speed", Mathf.Abs (move));
-		rigidBody.velocity = new Vector2 (move * playerMaxSpeed, rigidBody.velocity.y);
+		float playerMove = Input.GetAxis ("Horizontal");
+		animator.SetFloat ("Speed", Mathf.Abs (playerMove));
+		rigidBody.velocity = new Vector2 (playerMove * playerMaxSpeed, rigidBody.velocity.y);
+
 		//Check direction to flip sprite
-		if (move > 0 && !facingRight) 
-			flip ();
-		else if (move < 0 && facingRight)
-			flip ();
+		if (playerMove > 0 && !facingRight) 
+			spriteflip ();
+		else if (playerMove < 0 && facingRight)
+			spriteflip ();
+		
 		//playerJump
 		if(playerGrounded && Input.GetAxis("Jump")>0){
 			rigidBody.AddForce(new Vector2(0,playerJumpHeight));
+			jumpAnimation ();
 		}
+
+		if (playerGrounded) {
+			groundedAnimation(true);
+		}
+
+
 			
 		//change stances
 		if (Input.GetKeyDown("z")){
@@ -79,7 +88,7 @@ public class playerController : MonoBehaviour {
 	///</summary>
 
 	// flips character sprite
-	void flip(){
+	void spriteflip(){
 		facingRight = !facingRight;
 		Vector3 myScale = transform.localScale;
 		myScale.x *= -1;
@@ -103,7 +112,13 @@ public class playerController : MonoBehaviour {
 	}
 	private void jumpAnimation(){
 		animator.SetTrigger ("jumpPressed");
+		animator.SetBool ("isGrounded", false);
 		}
+
+	private void groundedAnimation(bool value){
+		animator.SetBool ("isGrounded", value);
+	}
+
 	private void idleAnimation(){
 		runAnimation (false);
 	}
