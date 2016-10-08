@@ -46,7 +46,7 @@ public class playerController : MonoBehaviour {
 		brawler,heavy,mobility,
 	}
 
-	playerStance currentStance = playerStance.brawler;
+	public playerStance currentStance = playerStance.brawler;
 
 	Rigidbody2D rigidBody;
 	Animator animator;
@@ -199,8 +199,8 @@ public class playerController : MonoBehaviour {
 			playerJumpHeight = 6.0f;
 			playerDoubleJump = false;
 			playerAttack = 3f;
-			playerFireRate = 20f;
-			playerAttackSpeed = 20f;
+			playerFireRate = 1f;
+			playerAttackSpeed = 50f;
 			StartCoroutine(ChangeAnimatorController("AnimationControllers/playerBrawlerController"));
 		}
 		else if (currentStance == playerStance.heavy){
