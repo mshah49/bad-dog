@@ -8,9 +8,7 @@ public class DestroyProjectile : MonoBehaviour {
 		Destroy (gameObject, timeAlive);
 		
 	}
-	
 	// Update is called once per frame
 	void Update () {
-	
 	}
 }

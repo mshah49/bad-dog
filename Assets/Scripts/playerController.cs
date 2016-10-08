@@ -5,6 +5,10 @@ using System.Collections;
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(Collider2D))]
+[RequireComponent(typeof(attackType))]
+
+
+[RequireComponent(typeof(attackType))]
 
 public class playerController : MonoBehaviour {
 
@@ -16,6 +20,7 @@ public class playerController : MonoBehaviour {
 	public float playerJumpHeight = 8f;
 	public bool playerDoubleJump = false;
 	public float playerAttack = 3f; 
+
 	bool playerGrounded = false;
 	bool facingRight;
 
@@ -27,18 +32,27 @@ public class playerController : MonoBehaviour {
 	//for Projectiles
 	public Transform gunTip;
 	public GameObject bullet;
-	public float playerFireRate = .5f;
+	public float playerAttackSpeed = 300f;
+	public float playerFireRate = 2f;
 	float nextFire = 0f;
 
-
+	//ground check
 	float groundCheckRadius = 0.2f;
 	public LayerMask groundLayer;
 	public Transform groundCheck;
+
+	//stances
+	public enum playerStance{
+		brawler,heavy,mobility,
+	}
+
+	public playerStance currentStance = playerStance.brawler;
 
 	Rigidbody2D rigidBody;
 	Animator animator;
 	BoxCollider2D boxCollider;
 	SpriteRenderer spriteRenderer;
+	attackType attackType;
 
 
 	public void Awake(){
@@ -47,14 +61,16 @@ public class playerController : MonoBehaviour {
 		spriteRenderer = GetComponent<SpriteRenderer> ();
 		boxCollider = GetComponent<BoxCollider2D> ();
 		animator = GetComponent<Animator> ();
+
+		attackType = GetComponent<attackType> ();
+
 		facingRight = true;
 	}
 		
 	// Use this for initialization
 
 	public void Update(){
-		//player shooting
-		if(Input.GetAxisRaw("Fire1")>0) fireRocket();
+
 	}
 	
 	// Update is called once per frame, use for game physics such as movement or bullets or stance change
@@ -89,16 +105,26 @@ public class playerController : MonoBehaviour {
 		//change stances
 		if (Input.GetKeyDown("z")){
 			updateStance (playerStance.mobility);
+			//attackType.updateAttackType (attackType.playerStance.mobility);
 		}
 		if (Input.GetKeyDown("x")){
 			updateStance (playerStance.heavy);
+			//attackType.updateAttackType(attackType.playerStance.heavy);
 		}
 		if (Input.GetKeyDown("c")){
 			updateStance (playerStance.brawler);
+			//attackType.updateAttackType (attackType.playerStance.brawler);
 		}
+
+		//player falls
 		if (transform.position.y < deathHeight) {
 			playerFallDeath = true;
 			fallDeath ();
+		}
+
+		//player shooting
+		if (Input.GetAxisRaw ("Fire1") > 0) {
+			fireRocket ();
 		}
 	}
 
@@ -119,6 +145,8 @@ public class playerController : MonoBehaviour {
 			gameManager.respawnPlayer ();
 	}
 
+
+	//attack 
 	void fireRocket(){
 		if (Time.time > nextFire) {
 			nextFire = Time.time + playerFireRate;
@@ -162,9 +190,6 @@ public class playerController : MonoBehaviour {
 	/// Stance Codes
 	///</summary>
 
-	public enum playerStance{
-		brawler,heavy,mobility,
-	}
 
 	//Updates player sprite and attributes based on selected stance
 	public void updateStance(playerStance currentStance){
@@ -175,6 +200,7 @@ public class playerController : MonoBehaviour {
 			playerDoubleJump = false;
 			playerAttack = 3f;
 			playerFireRate = 1f;
+			playerAttackSpeed = 50f;
 			StartCoroutine(ChangeAnimatorController("AnimationControllers/playerBrawlerController"));
 		}
 		else if (currentStance == playerStance.heavy){
@@ -182,16 +208,19 @@ public class playerController : MonoBehaviour {
 			playerJumpHeight = 4f;
 			playerDoubleJump = false;
 			playerAttack = 2f; 
-			playerFireRate = 0.5f;
+			playerFireRate = 20f;
+			playerAttackSpeed = 20f;
 		}
 		else if (currentStance == playerStance.mobility){
 			playerSpeed = 1.5f;
 			playerJumpHeight = 12f;
 			playerDoubleJump = true;
 			playerAttack = 1f;
-			playerFireRate = 2f;
+			playerFireRate = 0.5f;
+			playerAttackSpeed = 20f;
 			StartCoroutine(ChangeAnimatorController("AnimationControllers/playerMobilityController"));
 		}
+
 	}
 
 }
