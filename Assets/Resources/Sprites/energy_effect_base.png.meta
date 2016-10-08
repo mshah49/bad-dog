@@ -1,0 +1,1473 @@
+fileFormatVersion: 2
+guid: 7c2ed075401748a4abf5979fb34dd68b
+timeCreated: 1475721696
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: energy_effect_base_0
+    21300002: energy_effect_base_1
+    21300004: energy_effect_base_2
+    21300006: energy_effect_base_3
+    21300008: energy_effect_base_4
+    21300010: energy_effect_base_5
+    21300012: energy_effect_base_6
+    21300014: energy_effect_base_7
+    21300016: energy_effect_base_8
+    21300018: energy_effect_base_9
+    21300020: energy_effect_base_10
+    21300022: energy_effect_base_11
+    21300024: energy_effect_base_12
+    21300026: energy_effect_base_13
+    21300028: energy_effect_base_14
+    21300030: energy_effect_base_15
+    21300032: energy_effect_base_16
+    21300034: energy_effect_base_17
+    21300036: energy_effect_base_18
+    21300038: energy_effect_base_19
+    21300040: energy_effect_base_20
+    21300042: energy_effect_base_21
+    21300044: energy_effect_base_22
+    21300046: energy_effect_base_23
+    21300048: energy_effect_base_24
+    21300050: energy_effect_base_25
+    21300052: energy_effect_base_26
+    21300054: energy_effect_base_27
+    21300056: energy_effect_base_28
+    21300058: energy_effect_base_29
+    21300060: energy_effect_base_30
+    21300062: energy_effect_base_31
+    21300064: energy_effect_base_32
+    21300066: energy_effect_base_33
+    21300068: energy_effect_base_34
+    21300070: energy_effect_base_35
+    21300072: energy_effect_base_36
+    21300074: energy_effect_base_37
+    21300076: energy_effect_base_38
+    21300078: energy_effect_base_39
+    21300080: energy_effect_base_40
+    21300082: energy_effect_base_41
+    21300084: energy_effect_base_42
+    21300086: energy_effect_base_43
+    21300088: energy_effect_base_44
+    21300090: energy_effect_base_45
+    21300092: energy_effect_base_46
+    21300094: energy_effect_base_47
+    21300096: energy_effect_base_48
+    21300098: energy_effect_base_49
+    21300100: energy_effect_base_50
+    21300102: energy_effect_base_51
+    21300104: energy_effect_base_52
+    21300106: energy_effect_base_53
+    21300108: energy_effect_base_54
+    21300110: energy_effect_base_55
+    21300112: energy_effect_base_56
+    21300114: energy_effect_base_57
+    21300116: energy_effect_base_58
+    21300118: energy_effect_base_59
+    21300120: energy_effect_base_60
+    21300122: energy_effect_base_61
+    21300124: energy_effect_base_62
+    21300126: energy_effect_base_63
+    21300128: energy_effect_base_64
+    21300130: energy_effect_base_65
+    21300132: energy_effect_base_66
+    21300134: energy_effect_base_67
+    21300136: energy_effect_base_68
+    21300138: energy_effect_base_69
+    21300140: energy_effect_base_70
+    21300142: energy_effect_base_71
+    21300144: energy_effect_base_72
+    21300146: energy_effect_base_73
+    21300148: energy_effect_base_74
+    21300150: energy_effect_base_75
+    21300152: energy_effect_base_76
+    21300154: energy_effect_base_77
+    21300156: energy_effect_base_78
+    21300158: energy_effect_base_79
+    21300160: energy_effect_base_80
+    21300162: energy_effect_base_81
+    21300164: energy_effect_base_82
+    21300166: energy_effect_base_83
+    21300168: energy_effect_base_84
+    21300170: energy_effect_base_85
+    21300172: energy_effect_base_86
+    21300174: energy_effect_base_87
+    21300176: energy_effect_base_88
+    21300178: energy_effect_base_89
+    21300180: energy_effect_base_90
+    21300182: energy_effect_base_91
+    21300184: energy_effect_base_92
+    21300186: energy_effect_base_93
+    21300188: energy_effect_base_94
+    21300190: energy_effect_base_95
+    21300192: energy_effect_base_96
+    21300194: energy_effect_base_97
+    21300196: energy_effect_base_98
+    21300198: energy_effect_base_99
+    21300200: energy_effect_base_100
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: energy_effect_base_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 234
+        width: 27
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_1
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 234
+        width: 27
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_2
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 233
+        width: 28
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_3
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 232
+        width: 27
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_4
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 226
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_5
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 227
+        width: 22
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_6
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 232
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_7
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 199
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_8
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 199
+        width: 27
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_9
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 201
+        width: 29
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_10
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 199
+        width: 29
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_11
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 198
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_12
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 198
+        width: 21
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_13
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 197
+        width: 21
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_14
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 197
+        width: 21
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_15
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 197
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_16
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 179
+        width: 7
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_17
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 195
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_18
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 203
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_19
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 199
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_20
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 165
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_21
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 164
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_22
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 164
+        width: 23
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_23
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 164
+        width: 23
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_24
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 180
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_25
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 164
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_26
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 168
+        width: 9
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_27
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 163
+        width: 31
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_28
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 164
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_29
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 159
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_30
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 160
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_31
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 159
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_32
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 160
+        width: 19
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_33
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 160
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_34
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 160
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_35
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 159
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_36
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 160
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_37
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 160
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_38
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 160
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_39
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 159
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_40
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 160
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_41
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 132
+        width: 28
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_42
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 132
+        width: 27
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_43
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 131
+        width: 28
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_44
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 131
+        width: 27
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_45
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 129
+        width: 26
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_46
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 130
+        width: 26
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_47
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 150
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_48
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 135
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_49
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 146
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_50
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 146
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_51
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 146
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_52
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 134
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_53
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 131
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_54
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 133
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_55
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 100
+        width: 24
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_56
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 101
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_57
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 100
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_58
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 100
+        width: 22
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_59
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 99
+        width: 28
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_60
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 114
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_61
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 98
+        width: 22
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_62
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 106
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_63
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 73
+        width: 29
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_64
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 112
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_65
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 110
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_66
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 115
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_67
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 106
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_68
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 103
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_69
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 80
+        width: 33
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_70
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 102
+        width: 14
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_71
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 95
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_72
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 81
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_73
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 86
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_74
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 83
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_75
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 76
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_76
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 71
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_77
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 73
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_78
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 57
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_79
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 57
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_80
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 58
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_81
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 58
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_82
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 57
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_83
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 58
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_84
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 58
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_85
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 58
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_86
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 57
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_87
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 58
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_88
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 58
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_89
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 58
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_90
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 57
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_91
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 44
+        width: 19
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_92
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 44
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_93
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 43
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_94
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 44
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_95
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 44
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_96
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 43
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_97
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 44
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_98
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 44
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_99
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 44
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: energy_effect_base_100
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 4
+        width: 212
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

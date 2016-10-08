@@ -9,16 +9,27 @@ using System.Collections;
 public class playerController : MonoBehaviour {
 
 	//Starting player attributes
+	private bool playerFallDeath = false;
 	public float playerHealth = 5f;
 	public float playerSpeed = 1.0f;
 	public float playerMaxSpeed = 6f;
-	public float playerJumpHeight = 4f;
+	public float playerJumpHeight = 8f;
 	public bool playerDoubleJump = false;
 	public float playerAttack = 3f; 
-	public float playerFireRate = 1f;
-
 	bool playerGrounded = false;
 	bool facingRight;
+
+	//for Respawn
+	public GameManager gameManager;
+	private float deathHeight = -20f;
+
+
+	//for Projectiles
+	public Transform gunTip;
+	public GameObject bullet;
+	public float playerFireRate = .5f;
+	float nextFire = 0f;
+
 
 	float groundCheckRadius = 0.2f;
 	public LayerMask groundLayer;
@@ -29,7 +40,9 @@ public class playerController : MonoBehaviour {
 	BoxCollider2D boxCollider;
 	SpriteRenderer spriteRenderer;
 
+
 	public void Awake(){
+		gameManager = FindObjectOfType<GameManager> ();
 		rigidBody = GetComponent<Rigidbody2D> ();
 		spriteRenderer = GetComponent<SpriteRenderer> ();
 		boxCollider = GetComponent<BoxCollider2D> ();
@@ -40,6 +53,8 @@ public class playerController : MonoBehaviour {
 	// Use this for initialization
 
 	public void Update(){
+		//player shooting
+		if(Input.GetAxisRaw("Fire1")>0) fireRocket();
 	}
 	
 	// Update is called once per frame, use for game physics such as movement or bullets or stance change
@@ -81,6 +96,10 @@ public class playerController : MonoBehaviour {
 		if (Input.GetKeyDown("c")){
 			updateStance (playerStance.brawler);
 		}
+		if (transform.position.y < deathHeight) {
+			playerFallDeath = true;
+			fallDeath ();
+		}
 	}
 
 	///<summary>
@@ -93,6 +112,22 @@ public class playerController : MonoBehaviour {
 		Vector3 myScale = transform.localScale;
 		myScale.x *= -1;
 		transform.localScale = myScale;
+	}
+	// respawns player at beginning of level if fallen below map
+	void fallDeath(){
+		if(playerFallDeath == true)
+			gameManager.respawnPlayer ();
+	}
+
+	void fireRocket(){
+		if (Time.time > nextFire) {
+			nextFire = Time.time + playerFireRate;
+			if (facingRight) {
+				Instantiate (bullet, gunTip.position, Quaternion.Euler (new Vector3 (0, 0, 0)));
+			} else if (!facingRight) {
+				Instantiate (bullet, gunTip.position, Quaternion.Euler (new Vector3 (0, 0, 180f)));
+			}
+		}
 	}
 
 	//changes animations
