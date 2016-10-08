@@ -24,6 +24,7 @@ public class bulletPhysics : MonoBehaviour {
 	
 		rigidBody = GetComponent<Rigidbody2D> ();
 		animator = GetComponent<Animator> ();
+
 		player = GameObject.FindGameObjectWithTag("Player");
 		playerController playerController = player.GetComponent<playerController> ();
 
@@ -45,6 +46,8 @@ public class bulletPhysics : MonoBehaviour {
 	void Update () {
 		
 	}
+
+
 	public void removeForce(){
 		rigidBody.velocity = new Vector2 (0, 0);
 	}
