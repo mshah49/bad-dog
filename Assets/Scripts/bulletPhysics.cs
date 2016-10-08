@@ -29,9 +29,6 @@ public class bulletPhysics : MonoBehaviour {
 		playerController playerController = player.GetComponent<playerController> ();
 		playerAttackSpeed = playerController.playerAttackSpeed;
 
-		if (playerController.playerStance == playerController.playerStance.brawler) {
-			print ("brawlerShot");
-		}
 
 		if(transform.localRotation.z>0)
 			rigidBody.AddForce (new Vector2 (-1, 0) * playerAttackSpeed, ForceMode2D.Impulse);
