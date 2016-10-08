@@ -24,7 +24,7 @@ GameObject:
   - 50: {fileID: 50000012943140014}
   - 61: {fileID: 61000012795041146}
   - 114: {fileID: 114000010117967068}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: enemy1Melee
   m_TagString: Enemy1Melee
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000014007162566}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.22, y: -2.73, z: 0}
+  m_LocalPosition: {x: 0.58, y: -3.43, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -104,6 +104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inRange: 0
+  inAttackRange: 0
   isFacingRight: 1
   enemyMoveForce: 200
   enemyMaxSpeed: 4
@@ -117,7 +118,18 @@ MonoBehaviour:
   patrolMax: 0
   currentHP: 0
   maxHP: 0
-  attacking: 0
+  setRam: 0
+  ramX: {x: 0, y: 0, z: 0}
+  patrolCooldown: 0
+  patrolCooldownTimer: 0
+  attackIdle: 0
+  patrolIdle: 0
+  ramLeft: 0
+  ramRight: 0
+  rightRange: 0
+  leftRange: 0
+  equalX: 0
+  isAttacking: 0
 --- !u!212 &212000013204227276
 SpriteRenderer:
   m_ObjectHideFlags: 1

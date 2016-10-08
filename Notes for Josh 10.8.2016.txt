@@ -1,0 +1,12 @@
+Notes for Josh
+
+Good job commenting, I really appreciate! it's helping me go through your code easier. I think that after this duel we should work on how were going to organize all this code, sorting it into reusable parts etc.
+
+I had to change the tag option you were using, we need to work together and think about how were going to use tags and layers to our advantage
+
+currently we have a layer called shootable, that works with the attack code, essentially anything that can be shot at is shootable regardless if its an enemy or not. that way you can attack rocks, platforms etc without the bullet just going through it. I think we should keep this layer.
+
+As far as tags are concerned, you were using a tag to specify enemy type (enemyMelee1). 
+
+Instead I think we should (and i have implemented as such) use it to tag all enemies.(enemy). I think it will result in cleaner code in the end. If you disagree  lets discuss! 
+

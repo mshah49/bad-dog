@@ -54,7 +54,9 @@ public class playerController : MonoBehaviour {
 
 	public void Update(){
 		//player shooting
-		if(Input.GetAxisRaw("Fire1")>0) fireRocket();
+		if (Input.GetAxisRaw ("Fire1") > 0) {
+			fireRocket ();
+		}
 	}
 	
 	// Update is called once per frame, use for game physics such as movement or bullets or stance change
@@ -119,6 +121,8 @@ public class playerController : MonoBehaviour {
 			gameManager.respawnPlayer ();
 	}
 
+
+	//attack 
 	void fireRocket(){
 		if (Time.time > nextFire) {
 			nextFire = Time.time + playerFireRate;
