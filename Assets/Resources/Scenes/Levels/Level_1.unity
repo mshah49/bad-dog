@@ -931,7 +931,7 @@ MonoBehaviour:
   playerAttack: 3
   gameManager: {fileID: 0}
   gunTip: {fileID: 322497012}
-  bullet: {fileID: 1000010489691390, guid: f1ff7afddd234704e9dc5e4ec76fa21b, type: 2}
+  bullet: {fileID: 1000011260686076, guid: 3e85335a59f39334d9dc5fc29ebc31ce, type: 2}
   playerFireRate: 1
   groundLayer:
     serializedVersion: 2
@@ -1148,44 +1148,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1151912834}
   m_RootOrder: 0
---- !u!1 &1776731402
-GameObject:
+--- !u!1001 &1622024069
+Prefab:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1776731404}
-  - 114: {fileID: 1776731403}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1776731403
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1776731402}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26b13251ca7117c4589950af315e2ea2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentCheckpoint: {fileID: 129352826}
---- !u!4 &1776731404
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1776731402}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.42497668, y: 1.4959415, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4000012517039642, guid: 34dbf7c5494422d49b12849fbda8f3a2, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.42497668
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000012517039642, guid: 34dbf7c5494422d49b12849fbda8f3a2, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.4959415
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000012517039642, guid: 34dbf7c5494422d49b12849fbda8f3a2, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000012517039642, guid: 34dbf7c5494422d49b12849fbda8f3a2, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000012517039642, guid: 34dbf7c5494422d49b12849fbda8f3a2, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000012517039642, guid: 34dbf7c5494422d49b12849fbda8f3a2, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000012517039642, guid: 34dbf7c5494422d49b12849fbda8f3a2, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000012517039642, guid: 34dbf7c5494422d49b12849fbda8f3a2, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013230071902, guid: 34dbf7c5494422d49b12849fbda8f3a2,
+        type: 2}
+      propertyPath: currentCheckpoint
+      value: 
+      objectReference: {fileID: 129352826}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 34dbf7c5494422d49b12849fbda8f3a2, type: 2}
+  m_IsPrefabParent: 0

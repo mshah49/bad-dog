@@ -265,7 +265,7 @@ MonoBehaviour:
   playerAttack: 3
   gameManager: {fileID: 0}
   gunTip: {fileID: 4000010820508540}
-  bullet: {fileID: 1000010489691390, guid: f1ff7afddd234704e9dc5e4ec76fa21b, type: 2}
+  bullet: {fileID: 1000011260686076, guid: 3e85335a59f39334d9dc5fc29ebc31ce, type: 2}
   playerFireRate: 1
   groundLayer:
     serializedVersion: 2

@@ -105,7 +105,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47a77b97ff07ad649990b7066557fb54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rocketSpeed: 8
+  player: {fileID: 1000010855673864, guid: d116be3be5c7fef4884ad4ca422a5777, type: 2}
+  playerAttackSpeed: 0
 --- !u!114 &114000013345930840
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -129,7 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee3a4b901ea1e0146afa4d2de28b77a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeAlive: 20
+  timeAlive: 5
 --- !u!212 &212000011649513182
 SpriteRenderer:
   m_ObjectHideFlags: 1

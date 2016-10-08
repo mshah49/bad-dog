@@ -101,6 +101,7 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
 		{
 			equalX = false;
 		}
+					
 		if (inRange) //enemy is in range
 		{
 			patrolCooldown = 0;
@@ -235,7 +236,6 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
 
 	public void setHurt() //triggers hurt animation
 	{
-		walking = false;
 		if (tag == "Enemy")
 			{
 				animator.SetTrigger("enemy1MeleeHurt");
