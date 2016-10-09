@@ -32,15 +32,9 @@ public class bulletPhysics : MonoBehaviour {
 		
 		//set attackspeed to players current attack speed
 		playerAttackSpeed = playerController.playerAttackSpeed;
-
+	
 		//depending on stance, change the animation of the projectile
-		if (playerController.currentStance == playerController.playerStance.brawler) {
-			ChangeAnimatorController("AnimationControllers/playerBrawlerProjectile");
-			print ("brawlerShot");
-
-		}
-
-
+			
 		//launch projectiles
 		if(transform.localRotation.z>0)
 			rigidBody.AddForce (new Vector2 (-1, 0) * playerAttackSpeed, ForceMode2D.Impulse);
@@ -50,22 +44,25 @@ public class bulletPhysics : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		playerController playerController = player.GetComponent<playerController> ();
+
+		// use player object
+		player = GameObject.FindGameObjectWithTag("Player");
+
+		if (playerController.currentStance == playerController.playerStance.brawler) {
+			animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController> ("AnimationControllers/playerBrawlerProjectile");
+			print ("brawler");
+		}
+		else if (playerController.currentStance == playerController.playerStance.mobility) {
+			animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController> ("AnimationControllers/playerMobilityProjectile");
+			print ("mobility");
+		}
+
 	}
 
 
 	public void removeForce(){
 		rigidBody.velocity = new Vector2 (0, 0);
 	}
-
-	private IEnumerator ChangeAnimatorController(string name) {
-
-		// Assign our new animator controller
-		animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>(name);
-
-		// Wait a frame so the sprite updates
-		yield return new WaitForEndOfFrame();
-
-	}	
 		
 }
