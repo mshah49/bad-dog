@@ -200,7 +200,7 @@ public class playerController : MonoBehaviour {
 			playerDoubleJump = false;
 			playerAttack = 3f;
 			playerFireRate = 1f;
-			playerAttackSpeed = 50f;
+			playerAttackSpeed = 20f;
 			StartCoroutine(ChangeAnimatorController("AnimationControllers/playerBrawlerController"));
 		}
 		else if (currentStance == playerStance.heavy){
@@ -208,7 +208,7 @@ public class playerController : MonoBehaviour {
 			playerJumpHeight = 4f;
 			playerDoubleJump = false;
 			playerAttack = 2f; 
-			playerFireRate = 20f;
+			playerFireRate = 2f;
 			playerAttackSpeed = 20f;
 		}
 		else if (currentStance == playerStance.mobility){
