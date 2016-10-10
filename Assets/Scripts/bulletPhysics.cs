@@ -21,6 +21,7 @@ public class bulletPhysics : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
+
 		playerController playerController = player.GetComponent<playerController> ();
 		//set attackspeed to players current attack speed
 		bulletAttackSpeed = playerController.playerAttackSpeed;
@@ -33,18 +34,14 @@ public class bulletPhysics : MonoBehaviour {
 		player = GameObject.FindGameObjectWithTag("Player");
 		
 
-<<<<<<< HEAD
 		if (playerController.currentStance == playerController.playerStance.brawler) {
 			animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController> ("AnimationControllers/playerBrawlerProjectile");
 			print ("brawler");
 		}
 		else if (playerController.currentStance == playerController.playerStance.mobility) {
-			animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController> ("AnimationControllers/playerMobilityProjectile");
-			print ("mobility");
+			animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController> ("AnimationControllers/playerBrawlerProjectile");
+			print ("brawler");
 		}	
-=======
-
->>>>>>> master
 	
 		//depending on stance, change the animation of the projectile
 
@@ -57,19 +54,6 @@ public class bulletPhysics : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		playerController playerController = player.GetComponent<playerController> ();
-
-		// use player object
-		player = GameObject.FindGameObjectWithTag("Player");
-		if (playerController.currentStance == playerController.playerStance.brawler) {
-			animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController> ("AnimationControllers/playerBrawlerProjectile");
-			print ("brawler");
-		}
-		else if (playerController.currentStance == playerController.playerStance.mobility) {
-			animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController> ("AnimationControllers/playerMobilityProjectile");
-			print ("mobility");
-		}	
-
 	}
 
 
