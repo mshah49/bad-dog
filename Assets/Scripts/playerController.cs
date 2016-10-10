@@ -14,12 +14,11 @@ public class playerController : MonoBehaviour {
 
 	//Starting player attributes
 	private bool playerFallDeath = false;
-	public float playerHealth = 5f;
-	public float playerSpeed = 1.0f;
-	public float playerMaxSpeed = 6f;
-	public float playerJumpHeight = 8f;
+	public float playerHealth;
+	public float playerSpeed;
+	public float playerJumpHeight;
 	public bool playerDoubleJump = false;
-	public float playerAttack = 3f; 
+	public float playerAttack;
 
 	bool playerGrounded = false;
 	bool facingRight;
@@ -32,9 +31,9 @@ public class playerController : MonoBehaviour {
 	//for Projectiles
 	public Transform gunTip;
 	public GameObject bullet;
-	public float playerAttackSpeed = 300f;
-	public float playerFireRate = 2f;
-	float nextFire = 0f;
+	public float playerAttackSpeed;
+	public float playerFireRate = 2.0f;
+	float nextFire = 0.0f;
 
 	//ground check
 	float groundCheckRadius = 0.2f;
@@ -56,6 +55,7 @@ public class playerController : MonoBehaviour {
 
 
 	public void Awake(){
+		
 		gameManager = FindObjectOfType<GameManager> ();
 		rigidBody = GetComponent<Rigidbody2D> ();
 		spriteRenderer = GetComponent<SpriteRenderer> ();
@@ -82,7 +82,7 @@ public class playerController : MonoBehaviour {
 		//playerMovement
 		float playerMove = Input.GetAxis ("Horizontal");
 		animator.SetFloat ("Speed", Mathf.Abs (playerMove));
-		rigidBody.velocity = new Vector2 (playerMove * playerMaxSpeed, rigidBody.velocity.y);
+		rigidBody.velocity = new Vector2 (playerMove * playerSpeed, rigidBody.velocity.y);
 
 		//Check direction to flip sprite
 		if (playerMove > 0 && !facingRight) 
@@ -146,6 +146,7 @@ public class playerController : MonoBehaviour {
 	}
 
 
+
 	//attack 
 	void fireRocket(){
 		if (Time.time > nextFire) {
@@ -195,31 +196,31 @@ public class playerController : MonoBehaviour {
 	public void updateStance(playerStance newStance){
 		if (newStance == playerStance.brawler){
 			currentStance = playerStance.brawler;
-			playerSpeed = 1.0f;
-			playerJumpHeight = 6.0f;
+			playerSpeed = 10.0f;
+			playerJumpHeight = 40.0f;
 			playerDoubleJump = false;
 			playerAttack = 3f;
 			playerFireRate = 1f;
-			playerAttackSpeed = 20f;
+			playerAttackSpeed = 10.0f;
 			StartCoroutine(ChangeAnimatorController("AnimationControllers/playerBrawlerController"));
 		}
 		else if (newStance == playerStance.heavy){
 			currentStance = playerStance.heavy;
-			playerSpeed = 0.5f;
-			playerJumpHeight = 4f;
+			playerSpeed = 5.0f;
+			playerJumpHeight = 30.0f;
 			playerDoubleJump = false;
 			playerAttack = 2f; 
 			playerFireRate = 2f;
-			playerAttackSpeed = 20f;
+			playerAttackSpeed = 3.0f;
 		}
 		else if (newStance == playerStance.mobility){
 			currentStance = playerStance.mobility;
-			playerSpeed = 1.5f;
-			playerJumpHeight = 12f;
+			playerSpeed = 15.0f;
+			playerJumpHeight = 50.0f;
 			playerDoubleJump = true;
 			playerAttack = 1f;
 			playerFireRate = 0.5f;
-			playerAttackSpeed = 20f;
+			playerAttackSpeed = 1.0f;
 			StartCoroutine(ChangeAnimatorController("AnimationControllers/playerMobilityController"));
 		}
 

@@ -16,24 +16,23 @@ public class bulletPhysics : MonoBehaviour {
 	public GameObject player;
 
 	//player attack speed
-	public float playerAttackSpeed;
+	public float bulletAttackSpeed;
 
 
 	// Use this for initialization
 	void Awake () {
-	
+		playerController playerController = player.GetComponent<playerController> ();
+		//set attackspeed to players current attack speed
+		bulletAttackSpeed = playerController.playerAttackSpeed;
 		//get components
 		rigidBody = GetComponent<Rigidbody2D> ();
 		animator = GetComponent<Animator> ();
-		playerController playerController = player.GetComponent<playerController> ();
+
 
 		// use player object
 		player = GameObject.FindGameObjectWithTag("Player");
 		
-		//set attackspeed to players current attack speed
-		playerAttackSpeed = playerController.playerAttackSpeed;
-	
-		//depending on stance, change the animation of the projectile
+
 		if (playerController.currentStance == playerController.playerStance.brawler) {
 			animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController> ("AnimationControllers/playerBrawlerProjectile");
 			print ("brawler");
@@ -42,11 +41,14 @@ public class bulletPhysics : MonoBehaviour {
 			animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController> ("AnimationControllers/playerMobilityProjectile");
 			print ("mobility");
 		}	
+	
+		//depending on stance, change the animation of the projectile
+
 		//launch projectiles
 		if(transform.localRotation.z>0)
-			rigidBody.AddForce (new Vector2 (-1, 0) * playerAttackSpeed, ForceMode2D.Impulse);
+			rigidBody.AddForce (new Vector2 (-1*bulletAttackSpeed, 0), ForceMode2D.Impulse);
 		else 
-			rigidBody.AddForce (new Vector2 (1, 0) * playerAttackSpeed, ForceMode2D.Impulse);
+			rigidBody.AddForce (new Vector2 (1*bulletAttackSpeed, 0), ForceMode2D.Impulse);
 	}
 	
 	// Update is called once per frame
