@@ -180,60 +180,8 @@ Transform:
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.5}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
-<<<<<<< HEAD
-<<<<<<< HEAD
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
---- !u!1001 &446991428
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4000010888371780, guid: 0da4cb87678a0ce43bb4d3c342659960, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000010888371780, guid: 0da4cb87678a0ce43bb4d3c342659960, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -5.67
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000010888371780, guid: 0da4cb87678a0ce43bb4d3c342659960, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000010888371780, guid: 0da4cb87678a0ce43bb4d3c342659960, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000010888371780, guid: 0da4cb87678a0ce43bb4d3c342659960, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000010888371780, guid: 0da4cb87678a0ce43bb4d3c342659960, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000010888371780, guid: 0da4cb87678a0ce43bb4d3c342659960, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000010888371780, guid: 0da4cb87678a0ce43bb4d3c342659960, type: 2}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 0da4cb87678a0ce43bb4d3c342659960, type: 2}
-  m_IsPrefabParent: 0
-=======
   m_Father: {fileID: 152446709}
   m_RootOrder: 2
->>>>>>> master
-=======
-  m_Father: {fileID: 152446709}
-  m_RootOrder: 2
->>>>>>> master
 --- !u!1001 &579277888
 Prefab:
   m_ObjectHideFlags: 0
@@ -271,15 +219,6 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000013151614598, guid: b5083a21d2006ad4fa5babfabffae4da, type: 2}
       propertyPath: m_RootOrder
-<<<<<<< HEAD
-<<<<<<< HEAD
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: b5083a21d2006ad4fa5babfabffae4da, type: 2}
-=======
-=======
->>>>>>> master
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -346,10 +285,6 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d116be3be5c7fef4884ad4ca422a5777, type: 2}
-<<<<<<< HEAD
->>>>>>> master
-=======
->>>>>>> master
   m_IsPrefabParent: 0
 --- !u!1001 &1528870318
 Prefab:
@@ -388,15 +323,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000010888371780, guid: 0da4cb87678a0ce43bb4d3c342659960, type: 2}
       propertyPath: m_RootOrder
-<<<<<<< HEAD
-<<<<<<< HEAD
-      value: 3
-=======
       value: 1
->>>>>>> master
-=======
-      value: 1
->>>>>>> master
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0da4cb87678a0ce43bb4d3c342659960, type: 2}
@@ -438,15 +365,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000012517039642, guid: 34dbf7c5494422d49b12849fbda8f3a2, type: 2}
       propertyPath: m_RootOrder
-<<<<<<< HEAD
-<<<<<<< HEAD
-      value: 5
-=======
       value: 4
->>>>>>> master
-=======
-      value: 4
->>>>>>> master
       objectReference: {fileID: 0}
     - target: {fileID: 114000013230071902, guid: 34dbf7c5494422d49b12849fbda8f3a2,
         type: 2}
@@ -494,15 +413,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000013780595068, guid: a1da97d4dd43a4744ae7776b1f00fa7a, type: 2}
       propertyPath: m_RootOrder
-<<<<<<< HEAD
-<<<<<<< HEAD
-      value: 4
-=======
       value: 2
->>>>>>> master
-=======
-      value: 2
->>>>>>> master
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a1da97d4dd43a4744ae7776b1f00fa7a, type: 2}
