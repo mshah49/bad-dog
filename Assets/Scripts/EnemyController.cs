@@ -47,6 +47,7 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
     public bool hurtTestComplete;
     private enemyHealth enemyHP;
     public Vector3 targetOnDifferentY;
+    public float spawnY;
 
 	// Use this for initialization
 	void Awake () {
@@ -65,6 +66,7 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
 		patrolCooldown = 0;
 		patrolCooldownTimer = 3f;
 		spawnX = transform.position.x; //stores the x coordinate of spawn so that patrol boundaries may be calculated
+        spawnY = transform.position.y;
 		patrolMin = spawnX - 10;
 		patrolMax = spawnX + 10;
 		attackIdle = false;
@@ -117,6 +119,10 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
 			inAttackRange = false;
 			enemyMaxSpeed = 4f; //enemy moves at normal speed if player is not in ramming range
 		}
+        if(setRam)
+        {
+            enemyMaxSpeed = 12f;
+        }
         if (hurtTest) //if Hurt Test Complete is checked, uncheck it and check Hurt Test to test the hurt animation
         {
             if (!hurtTestComplete)
@@ -134,7 +140,7 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
 			equalX = false;
 		}
 					
-		if (inRange) //enemy is in range
+		if (inRange || setRam) //enemy is in range
 		{
 			patrolCooldown = 0;
 			patrolIdle = false;
@@ -152,21 +158,19 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
 			else if (equalX && !attackIdle) //enemy will ram the player if the x matches up
 			{
 				setRam = true;
-				setWalk();
 				if (isFacingRight)
 				{
 					ramRight = transform.position.x + 10;
-					ramX = new Vector3(ramRight, transform.position.y, 0);
+					ramX = new Vector3(ramRight, spawnY, 0);
 				}
 				else
 				{
 					ramLeft = transform.position.x - 10;
-					ramX = new Vector3(ramLeft, transform.position.y, 0);
+					ramX = new Vector3(ramLeft, spawnY, 0);
 				}
 			}
             else if(!attackIdle) //if the player is out of attack range but still in sight then it will chase its target
 			{
-				setWalk();
 				if (player.transform.position.x < transform.position.x && isFacingRight)
 				{
 					Flip();
@@ -175,7 +179,7 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
 				{
 					Flip();
                 }
-				targetOnDifferentY = new Vector3(player.transform.position.x, transform.position.y, 0); //ignores y value of target
+				targetOnDifferentY = new Vector3(player.transform.position.x, spawnY, 0); //ignores y value of target
                 move(transform.position, targetOnDifferentY);
             }
 		}
@@ -200,7 +204,6 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
 					{
 						Flip();
 					}
-					setWalk();
                     move(transform.position, patrolRightEnd);
                 }
 			}
@@ -219,7 +222,6 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
 					{
 						Flip();
 					}
-					setWalk();
                     move(transform.position, patrolLeftEnd);
                 }
 			}
@@ -229,7 +231,6 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
 		{
 			setIdle();
 		}
-
         if(inAttackRange) //enemy will not change directions while moving if the player is in attack range; can be modified later to account for height
         {
             canFlip = false;
@@ -280,7 +281,7 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
         {
             enemyMaxSpeed = 0;
         }
-        if(enemyMaxSpeed > 0)
+        if (enemyMaxSpeed > 0)
         {
             setWalk();
         }
@@ -394,12 +395,12 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
                     if (isFacingRight)
                     {
                         ramRight = transform.position.x + 10;
-                        ramX = new Vector3(ramRight, transform.position.y, 0);
+                        ramX = new Vector3(ramRight, spawnY, 0);
                     }
                     else
                     {
                         ramLeft = transform.position.x - 10;
-                        ramX = new Vector3(ramLeft, transform.position.y, 0);
+                        ramX = new Vector3(ramLeft, spawnY, 0);
                     }
                 }
                 else if (enemyName != "Enemy 1 Melee")

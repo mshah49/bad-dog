@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 88ac05c10fa495e40a46b4ff68b46c0e
-timeCreated: 1475516694
+timeCreated: 1475984762
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -11,6 +11,9 @@ TextureImporter:
     21300008: player_mobility_idle_4
     21300010: player_mobility_idle_5
     21300012: player_mobility_idle_6
+    21300014: playerMobilityIdle_0
+    21300016: playerMobilityIdle_1
+    21300018: playerMobilityIdle_2
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -60,76 +63,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: player_mobility_idle_0
-      rect:
-        serializedVersion: 2
-        x: 14
-        y: 391
-        width: 25
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: player_mobility_idle_1
-      rect:
-        serializedVersion: 2
-        x: 15
-        y: 327
-        width: 25
-        height: 51
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: player_mobility_idle_2
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 263
-        width: 25
-        height: 51
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: player_mobility_idle_3
+      name: playerMobilityIdle_0
       rect:
         serializedVersion: 2
         x: 17
-        y: 199
-        width: 24
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: player_mobility_idle_4
-      rect:
-        serializedVersion: 2
-        x: 17
-        y: 135
-        width: 24
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: player_mobility_idle_5
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 71
+        y: 132
         width: 25
         height: 51
       alignment: 0
@@ -138,11 +76,24 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: player_mobility_idle_6
+      name: playerMobilityIdle_1
       rect:
         serializedVersion: 2
-        x: 15
-        y: 7
+        x: 17
+        y: 68
+        width: 25
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: playerMobilityIdle_2
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 4
         width: 25
         height: 51
       alignment: 0
