@@ -46,6 +46,7 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
     public bool hurtTest;
     public bool hurtTestComplete;
     private enemyHealth enemyHP;
+    public Vector3 targetOnDifferentY;
 
 	// Use this for initialization
 	void Awake () {
@@ -78,7 +79,6 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
         if(name.Contains("enemy1Melee")) //checks the name for the substring
         {
             enemyName = "Enemy 1 Melee"; //name is set in case of extra spawns which are numbered (e.g. "enemy1Melee (1)", etc.)
-            checker = true; //used to ensure the conditional works
         }
         enemyHP.setHP(enemyName);
         canFlip = true;
@@ -125,7 +125,7 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
             }
         }
         getRange(); //primarily used to display range in unity inspector at any given time
-		if(player.transform.position.x == transform.position.x) //checks if enemy and player are vertically aligned
+		if(Mathf.Abs(player.transform.position.x - transform.position.x) <= 0.5f) //checks if enemy and player are vertically aligned
 		{
 			equalX = true;
 		}
@@ -140,7 +140,7 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
 			patrolIdle = false;
 			if(setRam) //enemy has tried to ram the player
 			{
-				move(transform.position, ramX);
+				move(transform.position, ramX); //enemy is forced to move to a certain point past where they were vertically aligned with player
                 if ((isFacingRight && transform.position.x >= ramX.x) || (!isFacingRight && transform.position.x <= ramX.x))
 				{
 					setRam = false;
@@ -164,23 +164,27 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
 					ramX = new Vector3(ramLeft, transform.position.y, 0);
 				}
 			}
-			else if(!attackIdle) //if the player is out of attack range but still in sight then it will chase its target
+            else if(!attackIdle) //if the player is out of attack range but still in sight then it will chase its target
 			{
 				setWalk();
 				if (player.transform.position.x < transform.position.x && isFacingRight)
 				{
 					Flip();
-				}
+                }
 				else if (transform.position.x < player.transform.position.x && !isFacingRight)
 				{
 					Flip();
-				}
-				Vector3 targetOnDifferentY = new Vector3(player.transform.position.x, transform.position.y, 0); //ignores y value of target
+                }
+				targetOnDifferentY = new Vector3(player.transform.position.x, transform.position.y, 0); //ignores y value of target
                 move(transform.position, targetOnDifferentY);
             }
 		}
 		else //enemy patrolling
 		{
+            attackCooldown = 0; //ensures these values aren't arbitrarily applied
+            ramLeft = -999999999;
+            ramRight = 999999999;
+            ramX = new Vector3();
 			if (transform.position.x <= patrolMin || (isFacingRight && transform.position.x < patrolMax)) // enemy is past left bound or they are in bounds facing the right bound
 			{
 				if(!patrolIdle && transform.position.x <= patrolMin && !isFacingRight)
@@ -263,6 +267,10 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
                 hurtTestComplete = true;
                 hurtTest = false;
             }
+            if(inAttackRange)
+            {
+                enemyMaxSpeed = 12f;
+            }
         }
 	}
 
@@ -271,6 +279,10 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
         if(isHurt)
         {
             enemyMaxSpeed = 0;
+        }
+        if(enemyMaxSpeed > 0)
+        {
+            setWalk();
         }
         float step = enemyMaxSpeed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(start, end, step);
@@ -351,7 +363,7 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
 	{
         if(!isHurt) //cannot flip if hurt
         {
-            if (enemyName == "Enemy 1 Melee" && canFlip) //enemy1Melee only flips if it is allowed to flip
+            if (enemyName == "Enemy 1 Melee") //enemy1Melee only flips if it is allowed to flip
             {
                 isFacingRight = !isFacingRight;
                 Vector3 enemyScale = transform.localScale;
@@ -368,15 +380,27 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
         }
 	}
 
-    void OnTriggerEnter2D(Collider2D other) //insert function for player getting hit and taking damage here
+    void OnCollisionEnter2D(Collision2D other) //insert function for player getting hit and taking damage here
     {
+        checker = true;
         if(!isHurt) //cannot inflict damage if hurt
         {
             if (other.gameObject.tag == "Player")
             {
-                if (enemyName == "Enemy 1 Melee" && inAttackRange) //if the player is in enemy1Melee's attack range, then from an above function, enemy1Melee will be sped up, which is when the hitbox should be active
+                if (enemyName == "Enemy 1 Melee" && inAttackRange && !setRam && !attackIdle) //if the player is in enemy1Melee's attack range, then from an above function, enemy1Melee will be sped up, which is when the hitbox should be active
                 {
-
+                    setRam = true;
+                    setWalk();
+                    if (isFacingRight)
+                    {
+                        ramRight = transform.position.x + 10;
+                        ramX = new Vector3(ramRight, transform.position.y, 0);
+                    }
+                    else
+                    {
+                        ramLeft = transform.position.x - 10;
+                        ramX = new Vector3(ramLeft, transform.position.y, 0);
+                    }
                 }
                 else if (enemyName != "Enemy 1 Melee")
                 {
