@@ -192,26 +192,28 @@ public class playerController : MonoBehaviour {
 
 
 	//Updates player sprite and attributes based on selected stance
-	public void updateStance(playerStance currentStance){
-		if (currentStance == playerStance.brawler){
-
+	public void updateStance(playerStance newStance){
+		if (newStance == playerStance.brawler){
+			currentStance = playerStance.brawler;
 			playerSpeed = 1.0f;
 			playerJumpHeight = 6.0f;
 			playerDoubleJump = false;
 			playerAttack = 3f;
 			playerFireRate = 1f;
-			playerAttackSpeed = 50f;
+			playerAttackSpeed = 20f;
 			StartCoroutine(ChangeAnimatorController("AnimationControllers/playerBrawlerController"));
 		}
-		else if (currentStance == playerStance.heavy){
+		else if (newStance == playerStance.heavy){
+			currentStance = playerStance.heavy;
 			playerSpeed = 0.5f;
 			playerJumpHeight = 4f;
 			playerDoubleJump = false;
 			playerAttack = 2f; 
-			playerFireRate = 20f;
+			playerFireRate = 2f;
 			playerAttackSpeed = 20f;
 		}
-		else if (currentStance == playerStance.mobility){
+		else if (newStance == playerStance.mobility){
+			currentStance = playerStance.mobility;
 			playerSpeed = 1.5f;
 			playerJumpHeight = 12f;
 			playerDoubleJump = true;

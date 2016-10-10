@@ -12,7 +12,7 @@ public class bulletPhysics : MonoBehaviour {
 	Animator animator;
 	BoxCollider2D boxCollider;
 
-	//stance changes
+	//get player object
 	public GameObject player;
 
 	//player attack speed
@@ -22,20 +22,27 @@ public class bulletPhysics : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
 	
+		//get components
 		rigidBody = GetComponent<Rigidbody2D> ();
 		animator = GetComponent<Animator> ();
-
-		player = GameObject.FindGameObjectWithTag("Player");
 		playerController playerController = player.GetComponent<playerController> ();
 
+		// use player object
+		player = GameObject.FindGameObjectWithTag("Player");
+		
+		//set attackspeed to players current attack speed
 		playerAttackSpeed = playerController.playerAttackSpeed;
-
+	
+		//depending on stance, change the animation of the projectile
 		if (playerController.currentStance == playerController.playerStance.brawler) {
-			ChangeAnimatorController("AnimationControllers/playerBrawlerProjectile");
-			print ("brawlerShot");
-
+			animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController> ("AnimationControllers/playerBrawlerProjectile");
+			print ("brawler");
 		}
-
+		else if (playerController.currentStance == playerController.playerStance.mobility) {
+			animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController> ("AnimationControllers/playerMobilityProjectile");
+			print ("mobility");
+		}	
+		//launch projectiles
 		if(transform.localRotation.z>0)
 			rigidBody.AddForce (new Vector2 (-1, 0) * playerAttackSpeed, ForceMode2D.Impulse);
 		else 
@@ -44,22 +51,17 @@ public class bulletPhysics : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		playerController playerController = player.GetComponent<playerController> ();
+
+		// use player object
+		player = GameObject.FindGameObjectWithTag("Player");
+
+
 	}
 
 
 	public void removeForce(){
 		rigidBody.velocity = new Vector2 (0, 0);
 	}
-
-	private IEnumerator ChangeAnimatorController(string name) {
-
-		// Assign our new animator controller
-		animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>(name);
-
-		// Wait a frame so the sprite updates
-		yield return new WaitForEndOfFrame();
-
-	}	
 		
 }
