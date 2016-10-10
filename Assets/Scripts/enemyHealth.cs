@@ -5,6 +5,7 @@ public class enemyHealth : MonoBehaviour {
 
 	public float currentHP = 3;
 	public int maxHP = 3;
+	private float deathHeight = -20.0f;
 
 	// Use this for initialization
 	void awake(){
@@ -23,7 +24,7 @@ public class enemyHealth : MonoBehaviour {
 
 	public void addDamage (float damage){
 		currentHP -= damage;
-		if (currentHP <= 0) {
+		if (currentHP <= 0 || transform.position.y < deathHeight) {
 			killEnemy ();
 		}
 
