@@ -5,6 +5,7 @@ using System.Collections;
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(Collider2D))]
+[RequireComponent(typeof(playerController))]
 
 public class bulletPhysics : MonoBehaviour {
 
@@ -14,6 +15,8 @@ public class bulletPhysics : MonoBehaviour {
 
 	//get player object
 	public GameObject player;
+	// use player object
+
 
 	//player attack speed
 	public float bulletAttackSpeed;
@@ -21,26 +24,25 @@ public class bulletPhysics : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
-
-		playerController playerController = player.GetComponent<playerController> ();
-		//set attackspeed to players current attack speed
-		bulletAttackSpeed = playerController.playerAttackSpeed;
+		//find player
+		player = GameObject.FindGameObjectWithTag("Player");
 		//get components
 		rigidBody = GetComponent<Rigidbody2D> ();
 		animator = GetComponent<Animator> ();
+		playerController playerController = player.GetComponent<playerController> ();
+	
+		//set attackspeed to players current attack speed
+		bulletAttackSpeed = playerController.playerAttackSpeed;
+		//get components
 
-
-		// use player object
-		player = GameObject.FindGameObjectWithTag("Player");
-		
 
 		if (playerController.currentStance == playerController.playerStance.brawler) {
 			animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController> ("AnimationControllers/playerBrawlerProjectile");
 			print ("brawler");
 		}
 		else if (playerController.currentStance == playerController.playerStance.mobility) {
-			animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController> ("AnimationControllers/playerBrawlerProjectile");
-			print ("brawler");
+			animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController> ("AnimationControllers/playerMobileProjectile");
+			print ("mobility");
 		}	
 	
 		//depending on stance, change the animation of the projectile
