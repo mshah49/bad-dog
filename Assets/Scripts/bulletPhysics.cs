@@ -34,7 +34,14 @@ public class bulletPhysics : MonoBehaviour {
 		playerAttackSpeed = playerController.playerAttackSpeed;
 	
 		//depending on stance, change the animation of the projectile
-			
+		if (playerController.currentStance == playerController.playerStance.brawler) {
+			animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController> ("AnimationControllers/playerBrawlerProjectile");
+			print ("brawler");
+		}
+		else if (playerController.currentStance == playerController.playerStance.mobility) {
+			animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController> ("AnimationControllers/playerMobilityProjectile");
+			print ("mobility");
+		}	
 		//launch projectiles
 		if(transform.localRotation.z>0)
 			rigidBody.AddForce (new Vector2 (-1, 0) * playerAttackSpeed, ForceMode2D.Impulse);
@@ -49,14 +56,6 @@ public class bulletPhysics : MonoBehaviour {
 		// use player object
 		player = GameObject.FindGameObjectWithTag("Player");
 
-		if (playerController.currentStance == playerController.playerStance.brawler) {
-			animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController> ("AnimationControllers/playerBrawlerProjectile");
-			print ("brawler");
-		}
-		else if (playerController.currentStance == playerController.playerStance.mobility) {
-			animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController> ("AnimationControllers/playerMobilityProjectile");
-			print ("mobility");
-		}
 
 	}
 
