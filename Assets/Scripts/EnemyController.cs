@@ -29,8 +29,8 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
 	public float patrolCooldownTimer;
 	public bool attackIdle;
 	public bool patrolIdle;
-	Vector3 patrolLeftEnd;
-	Vector3 patrolRightEnd;
+	public Vector3 patrolLeftEnd;
+	public Vector3 patrolRightEnd;
 	public float ramLeft;
 	public float ramRight;
 	public float rightRange;
@@ -48,6 +48,8 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
     private enemyHealth enemyHP;
     public Vector3 targetOnDifferentY;
     public float spawnY;
+    public bool touchedGround;
+    public bool groundObtained;
 
 	// Use this for initialization
 	void Awake () {
@@ -87,14 +89,17 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
         hurtCountdownTimer = 1;
         hurtTest = false;
         hurtTestComplete = false;
-	}
+        touchedGround = false;
+        groundObtained = false;
+    }
 
 	// Update is called once per frame
 	void Update () {
 		if(player == null)
 		{
 			player = GameObject.FindGameObjectWithTag("Player");
-		}
+            Physics2D.IgnoreCollision(player.GetComponent<BoxCollider2D>(), GetComponent<BoxCollider2D>());
+        }
 
         if (Vector3.Distance(transform.position, player.transform.position) < range) //enemy detection
 		{
@@ -384,19 +389,31 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
 
     void fixPatrolBound()
     {
-        if (transform.position.y != patrolRightEnd.y)
+        if(touchedGround && !groundObtained)
         {
-            patrolRightEnd.y = transform.position.y;
-        }
-        if (transform.position.x != patrolLeftEnd.y)
-        {
-            patrolLeftEnd.y = transform.position.y;
+            if (transform.position.y != patrolRightEnd.y)
+            {
+                patrolRightEnd.y = transform.position.y;
+            }
+            if (transform.position.x != patrolLeftEnd.y)
+            {
+                patrolLeftEnd.y = transform.position.y;
+            }
+            if(transform.position.y != spawnY)
+            {
+                spawnY = transform.position.y;
+            }
+            groundObtained = true;
         }
     }
 
     void OnCollisionEnter2D(Collision2D other) //insert function for player getting hit and taking damage here
     {
         checker = true;
+        if(other.gameObject.tag == "Ground")
+        {
+            touchedGround = true;
+        }
         if(!isHurt) //cannot inflict damage if hurt
         {
             if (other.gameObject.tag == "Player")
