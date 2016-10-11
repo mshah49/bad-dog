@@ -41,7 +41,7 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
 	void Awake () {
 		player = GameObject.FindGameObjectWithTag("Player");
 		animator = GetComponent<Animator>();
-		range = 15f;
+		range = 6.5f;
 		meleeRange = 10f;
 		inRange = false; //checks if enemy is detected
 		inAttackRange = false; //checks if enemy is in ramming range
