@@ -750,6 +750,29 @@ Prefab:
       propertyPath: field of view
       value: 80
       objectReference: {fileID: 0}
+    - target: {fileID: 4000012606588328, guid: d116be3be5c7fef4884ad4ca422a5777, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0.257
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000012606588328, guid: d116be3be5c7fef4884ad4ca422a5777, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.003
+      objectReference: {fileID: 0}
+    - target: {fileID: 20000010372161842, guid: d116be3be5c7fef4884ad4ca422a5777,
+        type: 2}
+      propertyPath: m_BackGroundColor.r
+      value: 0.5982283
+      objectReference: {fileID: 0}
+    - target: {fileID: 20000010372161842, guid: d116be3be5c7fef4884ad4ca422a5777,
+        type: 2}
+      propertyPath: m_BackGroundColor.g
+      value: 0.43144464
+      objectReference: {fileID: 0}
+    - target: {fileID: 20000010372161842, guid: d116be3be5c7fef4884ad4ca422a5777,
+        type: 2}
+      propertyPath: m_BackGroundColor.b
+      value: 0.77205884
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d116be3be5c7fef4884ad4ca422a5777, type: 2}
   m_IsPrefabParent: 0
