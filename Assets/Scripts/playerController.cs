@@ -225,7 +225,7 @@ public class playerController : MonoBehaviour {
 			playerSpeed = 10.0f;
 			playerJumpHeight = 40.0f;
 			playerDoubleJump = false;
-			playerAttack = 3f;
+			playerAttack = 6f;
 			playerFireRate = 1f;
 			playerAttackSpeed = 10.0f;
 			playerAttackTimer = 0.5f;
@@ -245,7 +245,7 @@ public class playerController : MonoBehaviour {
 			playerSpeed = 15.0f;
 			playerJumpHeight = 50.0f;
 			playerDoubleJump = true;
-			playerAttack = 1f;
+			playerAttack = 2f;
 			playerFireRate = 0.5f;
 			playerAttackSpeed = 10.0f;
 			playerAttackTimer = 0.25f;
