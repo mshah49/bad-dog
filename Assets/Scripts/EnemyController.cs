@@ -95,7 +95,8 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
 		{
 			player = GameObject.FindGameObjectWithTag("Player");
 		}
-		if (Vector3.Distance(transform.position, player.transform.position) < range) //enemy detection
+
+        if (Vector3.Distance(transform.position, player.transform.position) < range) //enemy detection
 		{
 			if (!inRange)
 			{
@@ -131,6 +132,7 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
             }
         }
         getRange(); //primarily used to display range in unity inspector at any given time
+        fixPatrolBound(); //corrects patrol coordinates of enemy while grounded
 		if(Mathf.Abs(player.transform.position.x - transform.position.x) <= 0.5f) //checks if enemy and player are vertically aligned
 		{
 			equalX = true;
@@ -357,7 +359,6 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
 
 	void FixedUpdate()
 	{
-
 	}
 
 	void Flip() //flips sprite
@@ -380,6 +381,18 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
             }
         }
 	}
+
+    void fixPatrolBound()
+    {
+        if (transform.position.y != patrolRightEnd.y)
+        {
+            patrolRightEnd.y = transform.position.y;
+        }
+        if (transform.position.x != patrolLeftEnd.y)
+        {
+            patrolLeftEnd.y = transform.position.y;
+        }
+    }
 
     void OnCollisionEnter2D(Collision2D other) //insert function for player getting hit and taking damage here
     {
