@@ -19,6 +19,7 @@ public class playerController : MonoBehaviour {
 	public float playerJumpHeight;
 	public bool playerDoubleJump = false;
 	public float playerAttack;
+	public float playerAttackTimer = 0;
 
 	bool playerGrounded = false;
 	bool facingRight;
@@ -45,6 +46,9 @@ public class playerController : MonoBehaviour {
 		brawler,heavy,mobility,
 	}
 
+	//attackAnimationTimer
+	public float attackTimer = 0f;
+
 	public playerStance currentStance = playerStance.brawler;
 
 	Rigidbody2D rigidBody;
@@ -65,24 +69,28 @@ public class playerController : MonoBehaviour {
 		attackType = GetComponent<attackType> ();
 
 		facingRight = true;
+		isAttacking (false);
 	}
 		
 	// Use this for initialization
 
-	public void Update(){
-
-	}
-	
 	// Update is called once per frame, use for game physics such as movement or bullets or stance change
-	public void FixedUpdate () {
+	public void Update () {
 		
 		//check for ground
 		playerGrounded = Physics2D.OverlapCircle(groundCheck.position,groundCheckRadius,groundLayer);
-
+		if (playerGrounded) {
+			groundedAnimation (true);
+		}
 		//playerMovement
 		float playerMove = Input.GetAxis ("Horizontal");
-		animator.SetFloat ("Speed", Mathf.Abs (playerMove));
-		rigidBody.velocity = new Vector2 (playerMove * playerSpeed, rigidBody.velocity.y);
+		if(playerMove != 0.0f){
+			rigidBody.velocity = new Vector2 (playerMove * playerSpeed, rigidBody.velocity.y);
+			runAnimation(true);
+		}
+		else if (playerMove == 0.0f){
+			idleAnimation();
+		}
 
 		//Check direction to flip sprite
 		if (playerMove > 0 && !facingRight) 
@@ -95,12 +103,7 @@ public class playerController : MonoBehaviour {
 			rigidBody.AddForce(new Vector2(0,playerJumpHeight));
 			jumpAnimation ();
 		}
-
-		if (playerGrounded) {
-			groundedAnimation(true);
-		}
-
-
+			
 			
 		//change stances
 		if (Input.GetKeyDown("z")){
@@ -123,9 +126,20 @@ public class playerController : MonoBehaviour {
 		}
 
 		//player shooting
-		if (Input.GetAxisRaw ("Fire1") > 0) {
+		if (Input.GetKeyDown(KeyCode.LeftControl)){
+			attackAnimation ();
 			fireRocket ();
+			isAttacking (true);
+			attackTimer = playerAttackTimer;
 		}
+		if (attackTimer < 0) {
+			isAttacking (false);
+		}
+
+		if (attackTimer > 0) {
+			attackTimer -= Time.deltaTime;
+		}
+
 	}
 
 	///<summary>
@@ -171,13 +185,25 @@ public class playerController : MonoBehaviour {
 	}	
 
 	//Animation Scripts for State Machine
+
+
 	private void runAnimation(bool value){
 		animator.SetBool ("isRunning", value);
 	}
+
+	private void attackAnimation(){
+		animator.SetTrigger ("attackPressed");
+	}
+
+	private void isAttacking(bool value){
+		animator.SetBool ("isAttacking", value);
+	}
+
 	private void jumpAnimation(){
 		animator.SetTrigger ("jumpPressed");
 		animator.SetBool ("isGrounded", false);
-		}
+		print ("jumped");
+	}
 
 	private void groundedAnimation(bool value){
 		animator.SetBool ("isGrounded", value);
@@ -202,6 +228,7 @@ public class playerController : MonoBehaviour {
 			playerAttack = 3f;
 			playerFireRate = 1f;
 			playerAttackSpeed = 10.0f;
+			playerAttackTimer = 0.5f;
 			StartCoroutine(ChangeAnimatorController("AnimationControllers/playerBrawlerController"));
 		}
 		else if (newStance == playerStance.heavy){
@@ -221,6 +248,7 @@ public class playerController : MonoBehaviour {
 			playerAttack = 1f;
 			playerFireRate = 0.5f;
 			playerAttackSpeed = 10.0f;
+			playerAttackTimer = 0.25f;
 			StartCoroutine(ChangeAnimatorController("AnimationControllers/playerMobilityController"));
 		}
 
