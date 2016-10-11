@@ -15,28 +15,23 @@ public class projectileHit : MonoBehaviour {
 
 	}
 	void OnTriggerEnter2D(Collider2D other){
-		if (other.gameObject.layer == LayerMask.NameToLayer ("Shootable")) {
+		if (other.gameObject.layer == LayerMask.NameToLayer ("Shootable") || other.gameObject.layer == LayerMask.NameToLayer("Enemy")) {
 			bullet.removeForce ();
 			Destroy (gameObject);
 			if (other.tag == "Enemy") {
-				enemyHealth hurtEnemy = other.gameObject.GetComponent<enemyHealth> ();
-				hurtEnemy.addDamage (weaponDamage);
-				EnemyController enemyHurtAnimation = other.gameObject.GetComponent<EnemyController> ();
-				enemyHurtAnimation.setHurt();
+                EnemyController enemyController = other.gameObject.GetComponent<EnemyController>();
+                enemyController.inflictDamage(weaponDamage);
 			}
 		}
 	}
 	void OnTriggerStay2D(Collider2D other){
-		if (other.gameObject.layer == LayerMask.NameToLayer ("Shootable")) {
+		if (other.gameObject.layer == LayerMask.NameToLayer ("Shootable") || other.gameObject.layer == LayerMask.NameToLayer("Enemy")) {
 			bullet.removeForce ();
 			Destroy (gameObject);
 			if (other.tag == "Enemy") {
-				enemyHealth hurtEnemy = other.gameObject.GetComponent<enemyHealth> ();
-				hurtEnemy.addDamage (weaponDamage);
-
-				EnemyController enemyController = other.gameObject.GetComponent<EnemyController> ();
-				enemyController.setHurt();
-			}
+                EnemyController enemyController = other.gameObject.GetComponent<EnemyController>();
+                enemyController.inflictDamage(weaponDamage);
+            }
 		}
 }
 }

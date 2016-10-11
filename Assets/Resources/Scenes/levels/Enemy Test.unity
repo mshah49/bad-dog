@@ -310,6 +310,10 @@ Prefab:
       propertyPath: groundCheck
       value: 
       objectReference: {fileID: 1112287540}
+    - target: {fileID: 1000012997627020, guid: b5083a21d2006ad4fa5babfabffae4da, type: 2}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b5083a21d2006ad4fa5babfabffae4da, type: 2}
   m_IsPrefabParent: 0
@@ -351,6 +355,10 @@ Prefab:
     - target: {fileID: 4000010811233454, guid: d116be3be5c7fef4884ad4ca422a5777, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010745247480, guid: d116be3be5c7fef4884ad4ca422a5777, type: 2}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d116be3be5c7fef4884ad4ca422a5777, type: 2}

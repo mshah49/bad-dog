@@ -93,12 +93,11 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
         groundObtained = false;
     }
 
-	// Update is called once per frame
-	void Update () {
+    // Update is called once per frame
+    void Update () {
 		if(player == null)
 		{
 			player = GameObject.FindGameObjectWithTag("Player");
-            Physics2D.IgnoreCollision(player.GetComponent<BoxCollider2D>(), GetComponent<BoxCollider2D>());
         }
 
         if (Vector3.Distance(transform.position, player.transform.position) < range) //enemy detection
@@ -323,7 +322,7 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
         }	
 	}
 
-    public void inflictDamage(int damage) //takes an int parameter to inflict desired amount of damage, will have to be called so that hurt animation is correctly played
+    public void inflictDamage(float damage) //takes an int parameter to inflict desired amount of damage, will have to be called so that hurt animation is correctly played
     {
         if(!isHurt)
         {
@@ -412,12 +411,17 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
         checker = true;
         if(other.gameObject.tag == "Ground")
         {
+            if (transform.position.y != spawnY)
+            {
+                groundObtained = false;
+            }
             touchedGround = true;
         }
         if(!isHurt) //cannot inflict damage if hurt
         {
             if (other.gameObject.tag == "Player")
             {
+                Debug.Log("Collided with Player!");
                 if (enemyName == "Enemy 1 Melee" && inAttackRange && !setRam && !attackIdle) //if the player is in enemy1Melee's attack range, then from an above function, enemy1Melee will be sped up, which is when the hitbox should be active
                 {
                     setRam = true;
@@ -438,6 +442,14 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
 
                 }
             }
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D other)
+    {
+        if(other.gameObject.tag == "Ground")
+        {
+            touchedGround = false;
         }
     }
 }
