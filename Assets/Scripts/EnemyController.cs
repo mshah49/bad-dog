@@ -56,7 +56,7 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
 		player = GameObject.FindGameObjectWithTag("Player");
 		animator = GetComponent<Animator>();
         enemyHP = GetComponent<enemyHealth>(); //gets enemyHealth component from inspector
-		range = 15f;
+		range = 0f;
 		meleeRange = 10f;
 		inRange = false; //checks if enemy is detected
 		inAttackRange = false; //checks if enemy is in ramming range
