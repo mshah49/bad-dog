@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Enemy
   - Ground
-  - Enemy1Melee
   layers:
   - Default
   - TransparentFX
