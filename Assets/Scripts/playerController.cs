@@ -211,7 +211,7 @@ public class playerController : MonoBehaviour {
 			playerDoubleJump = false;
 			playerAttack = 2f; 
 			playerFireRate = 2f;
-			playerAttackSpeed = 3.0f;
+			playerAttackSpeed = 5.0f;
 		}
 		else if (newStance == playerStance.mobility){
 			currentStance = playerStance.mobility;
@@ -220,7 +220,7 @@ public class playerController : MonoBehaviour {
 			playerDoubleJump = true;
 			playerAttack = 1f;
 			playerFireRate = 0.5f;
-			playerAttackSpeed = 1.0f;
+			playerAttackSpeed = 10.0f;
 			StartCoroutine(ChangeAnimatorController("AnimationControllers/playerMobilityController"));
 		}
 
