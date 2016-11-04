@@ -11,7 +11,7 @@ public class DestroyProjectile : MonoBehaviour {
 		player = GameObject.FindGameObjectWithTag("Player");
 		playerController playerController = player.GetComponent<playerController> ();
 		if (playerController.currentStance == playerController.playerStance.brawler) {
-			timeAlive = 0.5f;
+			timeAlive = 0.25f;
 		}
 		else if (playerController.currentStance == playerController.playerStance.mobility) {
 			timeAlive = 5;

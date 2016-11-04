@@ -32,7 +32,7 @@ public class bulletPhysics : MonoBehaviour {
 		playerController playerController = player.GetComponent<playerController> ();
 	
 		//set attackspeed to players current attack speed
-		bulletAttackSpeed = playerController.playerAttackSpeed;
+		bulletAttackSpeed = playerController.playerProjectileSpeed;
 		//get components
 
 

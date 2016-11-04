@@ -37,7 +37,7 @@ public class playerController : MonoBehaviour {
 	//for Projectiles
 	public Transform gunTip;
 	public GameObject bullet;
-	public float playerAttackSpeed;
+	public float playerProjectileSpeed;
 	public float playerFireRate = 2.0f;
 	float nextFire = 0.0f;
 
@@ -118,7 +118,7 @@ public class playerController : MonoBehaviour {
 			} else {
 				if (canDoubleJump) {
 					canDoubleJump = false;
-					rigidBody.AddForce (new Vector2 (0, playerJumpHeight));
+					rigidBody.AddForce (new Vector2 (0, playerJumpHeight/1.5f));
 					jumpAnimation ();
 				}
 			}
@@ -126,21 +126,21 @@ public class playerController : MonoBehaviour {
 
 		//setting player level for testing and demo
 		//reset all to level 1
-		if (Input.GetKeyDown("0")){
+		if (Input.GetKeyDown("1")){
 			brawlerLevel = 1;
 			mobilityLevel = 1;
 			heavyLevel = 1;
 		}
 
-		if (Input.GetKeyDown("1")){
+		if (Input.GetKeyDown("2")){
 			brawlerLevel = 2;
 		}
 
-		if (Input.GetKeyDown("2")){
+		if (Input.GetKeyDown("3")){
 			mobilityLevel = 2;
 		}
 
-		if (Input.GetKeyDown("3")){
+		if (Input.GetKeyDown("4")){
 			heavyLevel = 2;
 		}
 
@@ -171,9 +171,9 @@ public class playerController : MonoBehaviour {
 			if (Time.time > nextFire) {
 				attackAnimation ();
 				nextFire = Time.time + playerFireRate;
-				fireRocket ();
 				isAttacking (true);
 				attackTimer = playerAttackTimer;
+				fireRocket ();
 			}
 		}
 		if (attackTimer < 0) {
@@ -268,7 +268,7 @@ public class playerController : MonoBehaviour {
 			playerDoubleJump = false;
 			playerAttack = 6f;
 			playerFireRate = 1f;
-			playerAttackSpeed = 10.0f;
+			playerProjectileSpeed = 20.0f;
 			playerAttackTimer = 0.5f;
 			StartCoroutine(ChangeAnimatorController("AnimationControllers/playerBrawlerController"));
 		}
@@ -279,7 +279,7 @@ public class playerController : MonoBehaviour {
 			playerDoubleJump = false;
 			playerAttack = 2f; 
 			playerFireRate = 2f;
-			playerAttackSpeed = 5.0f;
+			playerProjectileSpeed = 10.0f;
 			StartCoroutine(ChangeAnimatorController("AnimationControllers/playerHeavyController"));
 		}
 		else if (newStance == playerStance.mobility){
@@ -289,7 +289,7 @@ public class playerController : MonoBehaviour {
 			playerDoubleJump = true;
 			playerAttack = 2f;
 			playerFireRate = 0.5f;
-			playerAttackSpeed = 10.0f;
+			playerProjectileSpeed = 15.0f;
 			playerAttackTimer = 0.25f;
 			StartCoroutine(ChangeAnimatorController("AnimationControllers/playerMobilityController"));
 		}
