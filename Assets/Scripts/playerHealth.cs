@@ -1,14 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class playerHealth : MonoBehaviour {
+public class playerHealth : playerController{
+	
 
 	public float currentHP;
-	public int maxHP;
+	public float maxHP;
+
 
 	// Use this for initialization
 	void awake(){
-
+		maxHP = playerHealth;
 	}
 
 
@@ -24,26 +26,17 @@ public class playerHealth : MonoBehaviour {
 		}
 	}
 
-	public void setHP(string enemyName)
-	{
-		if(enemyName == "Enemy 1 Melee") //sets maxHP based on enemy type
-		{
-			maxHP = 3;
-		}
-		currentHP = maxHP;
-	}
-
 	public void addDamage (float damage){
 		float text = damage;
 		floatingTextController.createFloatingText (text.ToString(), transform);
 		currentHP -= damage;
 		if (currentHP <= 0) {
-			killEnemy ();
+			killPlayer ();
 		}
 
 	}
 
-	void killEnemy(){
+	void killPlayer(){
 		Destroy(gameObject);
 	}
 }

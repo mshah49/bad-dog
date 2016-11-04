@@ -45,8 +45,10 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
     public float hurtCountdown;
     public bool hurtTest;
     public bool hurtTestComplete;
+
     private enemyHealth enemyHP;
-    public Vector3 targetOnDifferentY;
+    
+	public Vector3 targetOnDifferentY;
     public float spawnY;
     public bool touchedGround;
     public bool groundObtained;
