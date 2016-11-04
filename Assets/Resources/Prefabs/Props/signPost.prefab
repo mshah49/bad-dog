@@ -85,6 +85,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed5cd7ce246f34443ada01840a72a30e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tipText: {fileID: 0}
+  Tip: If you are at Brawler level 2, you can destroy boulders with your punches!
 --- !u!212 &212000012471924170
 SpriteRenderer:
   m_ObjectHideFlags: 1
