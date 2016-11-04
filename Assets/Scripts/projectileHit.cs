@@ -29,7 +29,7 @@ public class projectileHit : MonoBehaviour {
 		if (other.gameObject.layer == LayerMask.NameToLayer ("Shootable")) {
 			bullet.removeForce ();
 			Destroy (gameObject);
-			if (other.tag == "BrawlerBlocker" && playerController.currentStance == playerController.playerStance.brawler) {
+			if (other.tag == "BrawlerBlocker" && playerController.currentStance == playerController.playerStance.brawler && playerController.brawlerLevel >= 2) {
 				blockerHealth blockerHealth = other.gameObject.GetComponent<blockerHealth>();
 				blockerHealth.addDamage(1);
 			}
@@ -49,7 +49,7 @@ public class projectileHit : MonoBehaviour {
 		if (other.gameObject.layer == LayerMask.NameToLayer ("Shootable")) {
 			bullet.removeForce ();
 			Destroy (gameObject);
-			if (other.tag == "BrawlerBlocker" && playerController.currentStance == playerController.playerStance.brawler) {
+			if (other.tag == "BrawlerBlocker" && playerController.currentStance == playerController.playerStance.brawler && playerController.brawlerLevel >= 2) {
 				blockerHealth blockerHealth = other.gameObject.GetComponent<blockerHealth>();
 				blockerHealth.addDamage(1);
 			}
