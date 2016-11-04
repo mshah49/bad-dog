@@ -25,7 +25,7 @@ GameObject:
   - 61: {fileID: 61000012795041146}
   - 114: {fileID: 114000010117967068}
   - 114: {fileID: 114000011130026948}
-  m_Layer: 11
+  m_Layer: 9
   m_Name: enemy1Melee
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ MonoBehaviour:
   inRange: 0
   inAttackRange: 0
   isFacingRight: 1
-  enemyMoveForce: 190
+  enemyMoveForce: 200
   enemyMaxSpeed: 4
   enemyJumpForce: 500
   attackCooldownTimer: 3
@@ -123,26 +123,12 @@ MonoBehaviour:
   patrolCooldownTimer: 0
   attackIdle: 0
   patrolIdle: 0
-  patrolLeftEnd: {x: 0, y: 0, z: 0}
-  patrolRightEnd: {x: 0, y: 0, z: 0}
   ramLeft: 0
   ramRight: 0
   rightRange: 0
   leftRange: 0
   equalX: 0
   isAttacking: 0
-  checker: 0
-  enemyName: 
-  canFlip: 0
-  isHurt: 0
-  hurtCountdownTimer: 0
-  hurtCountdown: 0
-  hurtTest: 0
-  hurtTestComplete: 0
-  targetOnDifferentY: {x: 0, y: 0, z: 0}
-  spawnY: 0
-  touchedGround: 0
-  groundObtained: 0
 --- !u!114 &114000011130026948
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -184,7 +170,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 12
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 565499fb10ba59948b3ec1fff1ee2256, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
