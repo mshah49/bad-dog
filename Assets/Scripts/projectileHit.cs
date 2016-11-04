@@ -26,6 +26,14 @@ public class projectileHit : MonoBehaviour {
 				enemyController.inflictDamage(playerController.playerAttack);
 			}
 		}
+		if (other.gameObject.layer == LayerMask.NameToLayer ("Shootable")) {
+			bullet.removeForce ();
+			Destroy (gameObject);
+			if (other.tag == "BrawlerBlocker" && playerController.currentStance == playerController.playerStance.brawler) {
+				blockerHealth blockerHealth = other.gameObject.GetComponent<blockerHealth>();
+				blockerHealth.addDamage(1);
+			}
+		}
 	}
 	void OnTriggerStay2D(Collider2D other){
 		player = GameObject.FindGameObjectWithTag("Player");
@@ -37,6 +45,14 @@ public class projectileHit : MonoBehaviour {
                 EnemyController enemyController = other.gameObject.GetComponent<EnemyController>();
 				enemyController.inflictDamage(playerController.playerAttack);
             }
+		}
+		if (other.gameObject.layer == LayerMask.NameToLayer ("Shootable")) {
+			bullet.removeForce ();
+			Destroy (gameObject);
+			if (other.tag == "BrawlerBlocker" && playerController.currentStance == playerController.playerStance.brawler) {
+				blockerHealth blockerHealth = other.gameObject.GetComponent<blockerHealth>();
+				blockerHealth.addDamage(1);
+			}
 		}
 }
 }
