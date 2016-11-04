@@ -10,7 +10,6 @@ public class playerController : MonoBehaviour {
 
 	//Starting player attributes
 	private bool playerFallDeath = false;
-	public float playerHealth;
 	public float playerSpeed;
 	public float playerJumpHeight;
 	public bool playerDoubleJump = false;
@@ -19,7 +18,7 @@ public class playerController : MonoBehaviour {
 	public int brawlerLevel = 1;
 	public int mobilityLevel = 1;
 	public int heavyLevel = 1;
-	private playerHealth playerHP;
+	private playerHealthController playerHP;
 
 	bool playerGrounded = false;
 	bool facingRight;
@@ -60,7 +59,7 @@ public class playerController : MonoBehaviour {
 	SpriteRenderer spriteRenderer;
 
 	public void Awake(){
-		playerHP = GetComponent<playerHealth>(); //gets enemyHealth component from inspector
+		playerHP = GetComponent<playerHealthController>(); //gets enemyHealth component from inspector
 		updateStance (playerStance.brawler);
 		gameManager = FindObjectOfType<GameManager> ();
 		rigidBody = GetComponent<Rigidbody2D> ();

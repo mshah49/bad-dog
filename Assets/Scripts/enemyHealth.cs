@@ -3,12 +3,13 @@ using System.Collections;
 
 public class enemyHealth : MonoBehaviour {
 
+	public GameObject player;
 	public float currentHP;
 	public int maxHP;
+	public int expGain = 0;
 
 	// Use this for initialization
 	void awake(){
-		
 	}
 
 
@@ -29,6 +30,7 @@ public class enemyHealth : MonoBehaviour {
         if(enemyName == "Enemy 1 Melee") //sets maxHP based on enemy type
         {
             maxHP = 3;
+			expGain = 95;
         }
         currentHP = maxHP;
     }
@@ -38,12 +40,19 @@ public class enemyHealth : MonoBehaviour {
 		floatingTextController.createFloatingText (text.ToString(), transform);
 		currentHP -= damage;
 		if (currentHP <= 0) {
+			enemyEXP (expGain);
 			killEnemy ();
 		}
 
 	}
 
+	public void enemyEXP(int exp){
+		player = GameObject.FindGameObjectWithTag("Player");
+		playerEXPController playerEXPController = player.GetComponent<playerEXPController>();
+		playerEXPController.currentEXP += exp;
+	}
+
 	void killEnemy(){
-			Destroy(gameObject);
+		Destroy(gameObject);
 	}
 }

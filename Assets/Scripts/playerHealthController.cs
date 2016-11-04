@@ -1,19 +1,18 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
-public class playerHealth : playerController{
-	
+public class playerHealthController : MonoBehaviour{
 
-	public float currentHP;
-	public float maxHP;
 
+	private GameObject player;
+	public float currentHP =100;
+	public float maxHP = 100;
+	public Slider healthSlider;  
 
 	// Use this for initialization
 	void awake(){
-		maxHP = playerHealth;
 	}
-
-
 	void Start () {
 
 	}
@@ -24,12 +23,14 @@ public class playerHealth : playerController{
 		{
 			currentHP = maxHP;
 		}
+		healthSlider.value = currentHP;
 	}
 
 	public void addDamage (float damage){
 		float text = damage;
 		floatingTextController.createFloatingText (text.ToString(), transform);
 		currentHP -= damage;
+		healthSlider.value = currentHP;
 		if (currentHP <= 0) {
 			killPlayer ();
 		}
