@@ -19,9 +19,11 @@ public class playerController : MonoBehaviour {
 	public int brawlerLevel = 1;
 	public int mobilityLevel = 1;
 	public int heavyLevel = 1;
+	private playerHealth playerHP;
 
 	bool playerGrounded = false;
 	bool facingRight;
+	bool isHurt;
 
 	bool canDoubleJump;
 
@@ -58,6 +60,7 @@ public class playerController : MonoBehaviour {
 	SpriteRenderer spriteRenderer;
 
 	public void Awake(){
+		playerHP = GetComponent<playerHealth>(); //gets enemyHealth component from inspector
 		updateStance (playerStance.brawler);
 		gameManager = FindObjectOfType<GameManager> ();
 		rigidBody = GetComponent<Rigidbody2D> ();
@@ -285,6 +288,20 @@ public class playerController : MonoBehaviour {
 			StartCoroutine(ChangeAnimatorController("AnimationControllers/playerMobilityController"));
 		}
 
+	}
+
+	public void takeDamage(float damage) //takes an int parameter to inflict desired amount of damage, will have to be called so that hurt animation is correctly played
+	{
+		if(!isHurt)
+		{
+			if (playerHP.currentHP > 0)
+			{
+				//setHurt();
+				isHurt = true;
+				playerHP.addDamage(damage); //calls addDamage function of enemyHealth component
+				//hurtCountdown = hurtCountdownTimer;
+			}
+		}
 	}
 
 }
