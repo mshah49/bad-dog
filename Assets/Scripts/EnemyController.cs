@@ -51,6 +51,7 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
     public bool touchedGround;
     public bool groundObtained;
 
+
 	// Use this for initialization
 	void Awake () {
 		player = GameObject.FindGameObjectWithTag("Player");
