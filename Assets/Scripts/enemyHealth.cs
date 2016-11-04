@@ -34,6 +34,8 @@ public class enemyHealth : MonoBehaviour {
     }
 
 	public void addDamage (float damage){
+		float text = damage;
+		floatingTextController.createFloatingText (text.ToString(), transform);
 		currentHP -= damage;
 		if (currentHP <= 0) {
 			killEnemy ();

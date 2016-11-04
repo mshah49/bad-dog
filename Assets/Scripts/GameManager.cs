@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		player = FindObjectOfType<playerController> ();
-	
+		floatingTextController.initialize ();
 	}
 	
 	// Update is called once per frame

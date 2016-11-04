@@ -24,7 +24,7 @@ public class attackType : MonoBehaviour {
 
 	public void updateAttackType(playerStance currentStance){
 		if (currentStance == playerStance.brawler){
-			player.playerAttack = 200f; 
+			player.playerAttack = 400f; 
 			player.playerFireRate = 0.3f;
 			//StartCoroutine(ChangeAnimatorController("AnimationControllers/playerBrawlerController"));
 		}
