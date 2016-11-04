@@ -107,7 +107,7 @@ public class playerController : MonoBehaviour {
 
 
 		//playerJump
-		if (Input.GetKeyDown("space")) {
+		if (Input.GetKeyDown("space") && currentStance != playerStance.heavy) {
 			if (playerGrounded) {
 				rigidBody.AddForce (new Vector2 (0, playerJumpHeight));
 				jumpAnimation ();
@@ -168,10 +168,13 @@ public class playerController : MonoBehaviour {
 
 		//player shooting
 		if (Input.GetKeyDown(KeyCode.LeftControl)){
-			attackAnimation ();
-			fireRocket ();
-			isAttacking (true);
-			attackTimer = playerAttackTimer;
+			if (Time.time > nextFire) {
+				attackAnimation ();
+				nextFire = Time.time + playerFireRate;
+				fireRocket ();
+				isAttacking (true);
+				attackTimer = playerAttackTimer;
+			}
 		}
 		if (attackTimer < 0) {
 			isAttacking (false);
@@ -204,15 +207,12 @@ public class playerController : MonoBehaviour {
 
 	//attack 
 	void fireRocket(){
-		if (Time.time > nextFire) {
-			nextFire = Time.time + playerFireRate;
 			if (facingRight) {
 				Instantiate (bullet, gunTip.position, Quaternion.Euler (new Vector3 (0, 0, 0)));
 			} else if (!facingRight) {
 				Instantiate (bullet, gunTip.position, Quaternion.Euler (new Vector3 (0, 0, 180f)));
 			}
 		}
-	}
 
 	//changes animations
 	private IEnumerator ChangeAnimatorController(string name) {
@@ -280,6 +280,7 @@ public class playerController : MonoBehaviour {
 			playerAttack = 2f; 
 			playerFireRate = 2f;
 			playerAttackSpeed = 5.0f;
+			StartCoroutine(ChangeAnimatorController("AnimationControllers/playerHeavyController"));
 		}
 		else if (newStance == playerStance.mobility){
 			currentStance = playerStance.mobility;
