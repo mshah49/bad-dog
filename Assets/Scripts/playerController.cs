@@ -5,10 +5,6 @@ using System.Collections;
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(Collider2D))]
-[RequireComponent(typeof(attackType))]
-
-
-[RequireComponent(typeof(attackType))]
 
 public class playerController : MonoBehaviour {
 
@@ -60,8 +56,6 @@ public class playerController : MonoBehaviour {
 	Animator animator;
 	BoxCollider2D boxCollider;
 	SpriteRenderer spriteRenderer;
-	attackType attackType;
-
 
 	public void Awake(){
 		updateStance (playerStance.brawler);
@@ -70,9 +64,6 @@ public class playerController : MonoBehaviour {
 		spriteRenderer = GetComponent<SpriteRenderer> ();
 		boxCollider = GetComponent<BoxCollider2D> ();
 		animator = GetComponent<Animator> ();
-
-		attackType = GetComponent<attackType> ();
-
 		facingRight = true;
 		isAttacking (false);
 
@@ -266,7 +257,7 @@ public class playerController : MonoBehaviour {
 			playerSpeed = 10.0f;
 			playerJumpHeight = 150.0f;
 			playerDoubleJump = false;
-			playerAttack = 6f;
+			playerAttack = 2f;
 			playerFireRate = 1f;
 			playerProjectileSpeed = 20.0f;
 			playerAttackTimer = 0.5f;
@@ -277,7 +268,7 @@ public class playerController : MonoBehaviour {
 			playerSpeed = 5.0f;
 			playerJumpHeight = 100.0f;
 			playerDoubleJump = false;
-			playerAttack = 2f; 
+			playerAttack = 6f; 
 			playerFireRate = 2f;
 			playerProjectileSpeed = 10.0f;
 			StartCoroutine(ChangeAnimatorController("AnimationControllers/playerHeavyController"));
@@ -287,7 +278,7 @@ public class playerController : MonoBehaviour {
 			playerSpeed = 15.0f;
 			playerJumpHeight = 200.0f;
 			playerDoubleJump = true;
-			playerAttack = 2f;
+			playerAttack = 1f;
 			playerFireRate = 0.5f;
 			playerProjectileSpeed = 15.0f;
 			playerAttackTimer = 0.25f;
