@@ -20,6 +20,9 @@ public class playerController : MonoBehaviour {
 	public bool playerDoubleJump = false;
 	public float playerAttack;
 	public float playerAttackTimer = 0;
+	public int brawlerLevel = 1;
+	public int mobilityLevel = 1;
+	public int heavyLevel = 1;
 
 	bool playerGrounded = false;
 	bool facingRight;
@@ -108,7 +111,7 @@ public class playerController : MonoBehaviour {
 			if (playerGrounded) {
 				rigidBody.AddForce (new Vector2 (0, playerJumpHeight));
 				jumpAnimation ();
-				if (currentStance == playerStance.mobility) {
+				if (currentStance == playerStance.mobility && mobilityLevel > 1) {
 					canDoubleJump = true;
 				}	
 
@@ -121,6 +124,25 @@ public class playerController : MonoBehaviour {
 			}
 		}
 
+		//setting player level for testing and demo
+		//reset all to level 1
+		if (Input.GetKeyDown("0")){
+			brawlerLevel = 1;
+			mobilityLevel = 1;
+			heavyLevel = 1;
+		}
+
+		if (Input.GetKeyDown("1")){
+			brawlerLevel = 2;
+		}
+
+		if (Input.GetKeyDown("2")){
+			mobilityLevel = 2;
+		}
+
+		if (Input.GetKeyDown("3")){
+			heavyLevel = 2;
+		}
 
 			
 			
