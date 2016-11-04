@@ -24,6 +24,11 @@ public class projectileHit : MonoBehaviour {
 			if (other.tag == "Enemy") {
                 EnemyController enemyController = other.gameObject.GetComponent<EnemyController>();
 				enemyController.inflictDamage(playerController.playerAttack);
+
+				if (playerController.currentStance == playerController.playerStance.heavy) {
+					enemyOnFire enemyOnFire = other.gameObject.GetComponent<enemyOnFire> ();
+					enemyOnFire.catchFire ();
+				}
 			}
 		}
 		if (other.gameObject.layer == LayerMask.NameToLayer ("Shootable")) {

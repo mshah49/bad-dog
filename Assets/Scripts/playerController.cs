@@ -18,6 +18,7 @@ public class playerController : MonoBehaviour {
 	public int brawlerLevel = 1;
 	public int mobilityLevel = 1;
 	public int heavyLevel = 1;
+	public int fireDamage = 1;
 	private playerHealthController playerHP;
 
 	bool playerGrounded = false;
