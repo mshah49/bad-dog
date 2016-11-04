@@ -24,6 +24,8 @@ public class playerController : MonoBehaviour {
 	bool playerGrounded = false;
 	bool facingRight;
 
+	bool canDoubleJump;
+
 	//for Respawn
 	public GameManager gameManager;
 	private float deathHeight = -20f;
@@ -59,7 +61,7 @@ public class playerController : MonoBehaviour {
 
 
 	public void Awake(){
-		
+		updateStance (playerStance.brawler);
 		gameManager = FindObjectOfType<GameManager> ();
 		rigidBody = GetComponent<Rigidbody2D> ();
 		spriteRenderer = GetComponent<SpriteRenderer> ();
@@ -70,6 +72,7 @@ public class playerController : MonoBehaviour {
 
 		facingRight = true;
 		isAttacking (false);
+
 	}
 		
 	// Use this for initialization
@@ -97,12 +100,28 @@ public class playerController : MonoBehaviour {
 			spriteflip ();
 		else if (playerMove < 0 && facingRight)
 			spriteflip ();
-		
+
+
+
 		//playerJump
-		if(playerGrounded && Input.GetAxis("Jump")>0){
-			rigidBody.AddForce(new Vector2(0,playerJumpHeight));
-			jumpAnimation ();
+		if (Input.GetKeyDown("space")) {
+			if (playerGrounded) {
+				rigidBody.AddForce (new Vector2 (0, playerJumpHeight));
+				jumpAnimation ();
+				if (currentStance == playerStance.mobility) {
+					canDoubleJump = true;
+				}	
+
+			} else {
+				if (canDoubleJump) {
+					canDoubleJump = false;
+					rigidBody.AddForce (new Vector2 (0, playerJumpHeight));
+					jumpAnimation ();
+				}
+			}
 		}
+
+
 			
 			
 		//change stances
@@ -223,7 +242,7 @@ public class playerController : MonoBehaviour {
 		if (newStance == playerStance.brawler){
 			currentStance = playerStance.brawler;
 			playerSpeed = 10.0f;
-			playerJumpHeight = 40.0f;
+			playerJumpHeight = 150.0f;
 			playerDoubleJump = false;
 			playerAttack = 6f;
 			playerFireRate = 1f;
@@ -234,7 +253,7 @@ public class playerController : MonoBehaviour {
 		else if (newStance == playerStance.heavy){
 			currentStance = playerStance.heavy;
 			playerSpeed = 5.0f;
-			playerJumpHeight = 30.0f;
+			playerJumpHeight = 100.0f;
 			playerDoubleJump = false;
 			playerAttack = 2f; 
 			playerFireRate = 2f;
@@ -243,7 +262,7 @@ public class playerController : MonoBehaviour {
 		else if (newStance == playerStance.mobility){
 			currentStance = playerStance.mobility;
 			playerSpeed = 15.0f;
-			playerJumpHeight = 50.0f;
+			playerJumpHeight = 200.0f;
 			playerDoubleJump = true;
 			playerAttack = 2f;
 			playerFireRate = 0.5f;
