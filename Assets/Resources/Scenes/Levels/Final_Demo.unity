@@ -377,6 +377,17 @@ MonoBehaviour:
   currentEXP: 0
   maxEXP: 100
   EXPSlider: {fileID: 1348666515}
+--- !u!114 &114833982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 114833972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b883ac6aca723e24a8611f053c489004, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &145282959
 Prefab:
   m_ObjectHideFlags: 0
@@ -682,6 +693,21 @@ Prefab:
         type: 2}
       propertyPath: m_SizeDelta.x
       value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 223000011303629176, guid: 9d5794a499f39f84cb84d90ae62141f0,
+        type: 2}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 223000011303629176, guid: 9d5794a499f39f84cb84d90ae62141f0,
+        type: 2}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1969231215}
+    - target: {fileID: 114000012253423550, guid: 9d5794a499f39f84cb84d90ae62141f0,
+        type: 2}
+      propertyPath: m_UiScaleMode
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9d5794a499f39f84cb84d90ae62141f0, type: 2}
@@ -4527,6 +4553,11 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!20 &1969231215 stripped
+Camera:
+  m_PrefabParentObject: {fileID: 20000010372161842, guid: d116be3be5c7fef4884ad4ca422a5777,
+    type: 2}
+  m_PrefabInternal: {fileID: 362289757}
 --- !u!1001 &2056359320
 Prefab:
   m_ObjectHideFlags: 0
