@@ -24,13 +24,13 @@ public class stanceStatusGUI : MonoBehaviour {
 		player = GameObject.FindGameObjectWithTag("Player");
 		playerController playerController = player.GetComponent<playerController> ();
 		if (playerController.currentStance ==playerController.playerStance.brawler) {
-			BrawlerString = GUI.TextField (new Rect (25, 25, 200, 30), BrawlerString);
+			BrawlerString = GUI.TextField (new Rect (500, 25, 200, 30), BrawlerString);
 		}
 		if (playerController.currentStance ==playerController.playerStance.mobility) {
-			MobilityString = GUI.TextField (new Rect (25, 25, 200, 30),  MobilityString);
+			MobilityString = GUI.TextField (new Rect (500, 25, 200, 30),  MobilityString);
 		}
 		if (playerController.currentStance ==playerController.playerStance.heavy) {
-			HeavyString = GUI.TextField (new Rect (25, 25, 200, 30), HeavyString);
+			HeavyString = GUI.TextField (new Rect (500, 25, 200, 30), HeavyString);
 		}
 	}
 
