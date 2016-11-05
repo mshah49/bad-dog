@@ -2,7 +2,8 @@
 using System.Collections;
 
 public class projectileHit : MonoBehaviour {
-	public float weaponDamage = 1;
+
+	private GameObject player;
 	bulletPhysics bullet;
 
 	// Use this for initialization
@@ -15,27 +16,47 @@ public class projectileHit : MonoBehaviour {
 
 	}
 	void OnTriggerEnter2D(Collider2D other){
-		if (other.gameObject.layer == LayerMask.NameToLayer ("Shootable")) {
+		player = GameObject.FindGameObjectWithTag("Player");
+		playerController playerController = player.GetComponent<playerController> ();
+		if (other.gameObject.layer == LayerMask.NameToLayer ("Shootable") || other.gameObject.layer == LayerMask.NameToLayer("Enemy")) {
 			bullet.removeForce ();
 			Destroy (gameObject);
 			if (other.tag == "Enemy") {
-				enemyHealth hurtEnemy = other.gameObject.GetComponent<enemyHealth> ();
-				hurtEnemy.addDamage (weaponDamage);
-				EnemyController enemyHurtAnimation = other.gameObject.GetComponent<EnemyController> ();
-				enemyHurtAnimation.setHurt();
+                EnemyController enemyController = other.gameObject.GetComponent<EnemyController>();
+				enemyController.inflictDamage(playerController.playerAttack);
+
+				if (playerController.currentStance == playerController.playerStance.heavy) {
+					enemyOnFire enemyOnFire = other.gameObject.GetComponent<enemyOnFire> ();
+					enemyOnFire.catchFire ();
+				}
+			}
+		}
+		if (other.gameObject.layer == LayerMask.NameToLayer ("Shootable")) {
+			bullet.removeForce ();
+			Destroy (gameObject);
+			if (other.tag == "BrawlerBlocker" && playerController.currentStance == playerController.playerStance.brawler && playerController.brawlerLevel >= 2) {
+				blockerHealth blockerHealth = other.gameObject.GetComponent<blockerHealth>();
+				blockerHealth.addDamage(1);
 			}
 		}
 	}
 	void OnTriggerStay2D(Collider2D other){
-		if (other.gameObject.layer == LayerMask.NameToLayer ("Shootable")) {
+		player = GameObject.FindGameObjectWithTag("Player");
+		playerController playerController = player.GetComponent<playerController> ();
+		if (other.gameObject.layer == LayerMask.NameToLayer ("Shootable") || other.gameObject.layer == LayerMask.NameToLayer("Enemy")) {
 			bullet.removeForce ();
 			Destroy (gameObject);
 			if (other.tag == "Enemy") {
-				enemyHealth hurtEnemy = other.gameObject.GetComponent<enemyHealth> ();
-				hurtEnemy.addDamage (weaponDamage);
-
-				EnemyController enemyController = other.gameObject.GetComponent<EnemyController> ();
-				enemyController.setHurt();
+                EnemyController enemyController = other.gameObject.GetComponent<EnemyController>();
+				enemyController.inflictDamage(playerController.playerAttack);
+            }
+		}
+		if (other.gameObject.layer == LayerMask.NameToLayer ("Shootable")) {
+			bullet.removeForce ();
+			Destroy (gameObject);
+			if (other.tag == "BrawlerBlocker" && playerController.currentStance == playerController.playerStance.brawler && playerController.brawlerLevel >= 2) {
+				blockerHealth blockerHealth = other.gameObject.GetComponent<blockerHealth>();
+				blockerHealth.addDamage(1);
 			}
 		}
 }

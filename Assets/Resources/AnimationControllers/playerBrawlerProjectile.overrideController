@@ -7,4 +7,6 @@ AnimatorOverrideController:
   m_PrefabInternal: {fileID: 0}
   m_Name: playerBrawlerProjectile
   m_Controller: {fileID: 9100000, guid: 391666848670f5f489ae78bfdce8df6e, type: 2}
-  m_Clips: []
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: ac5bb7217c24f48449618097fccdba42, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: d9180c44a062ea243a6289c4cef1e2f6, type: 2}
