@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: c4d309ffec36a9c459a9370bffa4e84a
-timeCreated: 1475484370
+timeCreated: 1478317406
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -10,6 +10,12 @@ TextureImporter:
     21300006: player_brawler_walk_3
     21300008: player_brawler_walk_4
     21300010: player_brawler_walk_5
+    21300012: playerBrawlerWalk_0
+    21300014: playerBrawlerWalk_1
+    21300016: playerBrawlerWalk_2
+    21300018: playerBrawlerWalk_3
+    21300020: playerBrawlerWalk_4
+    21300022: playerBrawlerWalk_5
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -35,7 +41,7 @@ TextureImporter:
   textureFormat: -1
   maxTextureSize: 2048
   textureSettings:
-    filterMode: -1
+    filterMode: 0
     aniso: 16
     mipBias: -1
     wrapMode: 1
@@ -59,78 +65,78 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: player_brawler_walk_0
+      name: playerBrawlerWalk_0
       rect:
         serializedVersion: 2
-        x: 16
-        y: 327
-        width: 25
-        height: 51
+        x: 0
+        y: 320
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: player_brawler_walk_1
+      name: playerBrawlerWalk_1
       rect:
         serializedVersion: 2
-        x: 16
-        y: 263
-        width: 25
-        height: 50
+        x: 0
+        y: 256
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: player_brawler_walk_2
+      name: playerBrawlerWalk_2
       rect:
         serializedVersion: 2
-        x: 16
-        y: 199
-        width: 24
-        height: 51
+        x: 0
+        y: 192
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: player_brawler_walk_3
+      name: playerBrawlerWalk_3
       rect:
         serializedVersion: 2
-        x: 16
-        y: 135
-        width: 24
-        height: 51
+        x: 0
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: player_brawler_walk_4
+      name: playerBrawlerWalk_4
       rect:
         serializedVersion: 2
-        x: 16
-        y: 71
-        width: 25
-        height: 50
+        x: 0
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: player_brawler_walk_5
+      name: playerBrawlerWalk_5
       rect:
         serializedVersion: 2
-        x: 16
-        y: 7
-        width: 25
-        height: 51
+        x: 0
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

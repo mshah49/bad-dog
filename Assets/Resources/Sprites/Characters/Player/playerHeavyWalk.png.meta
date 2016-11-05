@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 7bc1dedc0f7935d47949d6bda5e4bf29
-timeCreated: 1478233106
+timeCreated: 1478317459
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -35,7 +35,7 @@ TextureImporter:
   textureFormat: -1
   maxTextureSize: 2048
   textureSettings:
-    filterMode: -1
+    filterMode: 0
     aniso: 16
     mipBias: -1
     wrapMode: 1
@@ -62,10 +62,10 @@ TextureImporter:
       name: playerHeavyWalk_0
       rect:
         serializedVersion: 2
-        x: 17
-        y: 334
-        width: 30
-        height: 51
+        x: 0
+        y: 330
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -75,10 +75,10 @@ TextureImporter:
       name: playerHeavyWalk_1
       rect:
         serializedVersion: 2
-        x: 17
-        y: 270
-        width: 30
-        height: 50
+        x: 0
+        y: 266
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -88,10 +88,10 @@ TextureImporter:
       name: playerHeavyWalk_2
       rect:
         serializedVersion: 2
-        x: 17
-        y: 206
-        width: 30
-        height: 51
+        x: 0
+        y: 202
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -101,10 +101,10 @@ TextureImporter:
       name: playerHeavyWalk_3
       rect:
         serializedVersion: 2
-        x: 17
-        y: 142
-        width: 30
-        height: 51
+        x: 0
+        y: 138
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -114,10 +114,10 @@ TextureImporter:
       name: playerHeavyWalk_4
       rect:
         serializedVersion: 2
-        x: 17
-        y: 78
-        width: 30
-        height: 50
+        x: 0
+        y: 74
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,10 +127,10 @@ TextureImporter:
       name: playerHeavyWalk_5
       rect:
         serializedVersion: 2
-        x: 17
-        y: 14
-        width: 30
-        height: 51
+        x: 0
+        y: 10
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

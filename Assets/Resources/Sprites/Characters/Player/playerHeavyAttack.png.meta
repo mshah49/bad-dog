@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 11233ba015379784db61e4426b9a0502
-timeCreated: 1478233064
+timeCreated: 1478317418
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -35,7 +35,7 @@ TextureImporter:
   textureFormat: -1
   maxTextureSize: 2048
   textureSettings:
-    filterMode: -1
+    filterMode: 0
     aniso: 16
     mipBias: -1
     wrapMode: 1
@@ -62,10 +62,10 @@ TextureImporter:
       name: playerHeavyAttack_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 338
-        width: 31
-        height: 51
+        x: 0
+        y: 334
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -75,10 +75,10 @@ TextureImporter:
       name: playerHeavyAttack_1
       rect:
         serializedVersion: 2
-        x: 5
-        y: 274
-        width: 31
-        height: 51
+        x: 0
+        y: 270
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -88,10 +88,10 @@ TextureImporter:
       name: playerHeavyAttack_2
       rect:
         serializedVersion: 2
-        x: 5
-        y: 210
-        width: 42
-        height: 51
+        x: 0
+        y: 206
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -101,10 +101,10 @@ TextureImporter:
       name: playerHeavyAttack_3
       rect:
         serializedVersion: 2
-        x: 5
-        y: 146
-        width: 43
-        height: 51
+        x: 0
+        y: 142
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -114,10 +114,10 @@ TextureImporter:
       name: playerHeavyAttack_4
       rect:
         serializedVersion: 2
-        x: 5
-        y: 82
-        width: 40
-        height: 51
+        x: 0
+        y: 78
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,10 +127,10 @@ TextureImporter:
       name: playerHeavyAttack_5
       rect:
         serializedVersion: 2
-        x: 5
-        y: 18
-        width: 38
-        height: 51
+        x: 0
+        y: 14
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

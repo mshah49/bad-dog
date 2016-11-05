@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 9b3579abecea33c4ab6a8cb12e0c7b70
-timeCreated: 1475484362
+timeCreated: 1478317384
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -12,6 +12,14 @@ TextureImporter:
     21300010: player_brawler_jump_5
     21300012: player_brawler_jump_6
     21300014: player_brawler_jump_7
+    21300016: playerBrawlerJump_0
+    21300018: playerBrawlerJump_1
+    21300020: playerBrawlerJump_2
+    21300022: playerBrawlerJump_3
+    21300024: playerBrawlerJump_4
+    21300026: playerBrawlerJump_5
+    21300028: playerBrawlerJump_6
+    21300030: playerBrawlerJump_7
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -37,7 +45,7 @@ TextureImporter:
   textureFormat: -1
   maxTextureSize: 2048
   textureSettings:
-    filterMode: -1
+    filterMode: 0
     aniso: 16
     mipBias: -1
     wrapMode: 1
@@ -61,104 +69,104 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: player_brawler_jump_0
+      name: playerBrawlerJump_0
       rect:
         serializedVersion: 2
-        x: 18
+        x: 0
         y: 448
-        width: 28
-        height: 50
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: player_brawler_jump_1
+      name: playerBrawlerJump_1
       rect:
         serializedVersion: 2
-        x: 16
+        x: 0
         y: 384
-        width: 34
-        height: 46
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: player_brawler_jump_2
+      name: playerBrawlerJump_2
       rect:
         serializedVersion: 2
-        x: 15
+        x: 0
         y: 320
-        width: 34
-        height: 53
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: player_brawler_jump_3
+      name: playerBrawlerJump_3
       rect:
         serializedVersion: 2
-        x: 19
-        y: 260
-        width: 27
-        height: 56
+        x: 0
+        y: 256
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: player_brawler_jump_4
+      name: playerBrawlerJump_4
       rect:
         serializedVersion: 2
-        x: 16
-        y: 199
-        width: 33
-        height: 56
+        x: 0
+        y: 192
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: player_brawler_jump_5
+      name: playerBrawlerJump_5
       rect:
         serializedVersion: 2
-        x: 16
-        y: 134
-        width: 34
-        height: 55
+        x: 0
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: player_brawler_jump_6
+      name: playerBrawlerJump_6
       rect:
         serializedVersion: 2
-        x: 14
+        x: 0
         y: 64
-        width: 34
-        height: 53
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: player_brawler_jump_7
+      name: playerBrawlerJump_7
       rect:
         serializedVersion: 2
-        x: 15
+        x: 0
         y: 0
-        width: 34
-        height: 44
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
