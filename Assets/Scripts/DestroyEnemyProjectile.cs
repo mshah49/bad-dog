@@ -9,6 +9,7 @@ public class DestroyEnemyProjectile : MonoBehaviour {
     // Use this for initialization
     void Start () {
         enemy = GameObject.FindGameObjectWithTag("Enemy");
+        player = GameObject.FindGameObjectWithTag("Player");
         EnemyController enemyController = enemy.GetComponent<EnemyController>();
         timeAlive = 1f;
 
