@@ -27,11 +27,6 @@ public class enemyHealth : MonoBehaviour {
 
     public void setHP(string enemyName)
     {
-        if(enemyName == "Enemy 1 Melee") //sets maxHP based on enemy type
-        {
-            maxHP = 100;
-			expGain = 95;
-        }
         currentHP = maxHP;
     }
 

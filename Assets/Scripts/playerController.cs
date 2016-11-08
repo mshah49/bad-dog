@@ -297,7 +297,7 @@ public class playerController : MonoBehaviour {
 			if (playerHP.currentHP > 0)
 			{
 				//setHurt();
-				isHurt = true;
+				//isHurt = true;
 				playerHP.addDamage(damage); //calls addDamage function of enemyHealth component
 				//hurtCountdown = hurtCountdownTimer;
 			}
