@@ -29,7 +29,7 @@ public class playerController : MonoBehaviour {
 
 	//for Respawn
 	public GameManager gameManager;
-	private float deathHeight = -20f;
+	private float deathHeight = -7.5f;
 
 
 	//for Projectiles
