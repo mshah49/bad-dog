@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 6cdcec143883f554da16059fa8561d10
-timeCreated: 1478592883
+guid: 44265b3198484784c87e88b6c71717f0
+timeCreated: 1478583797
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: enemy1Range1Attack_0
-    21300002: enemy1Range1Attack_1
+    21300000: playerHeavyProjectile_0
+    21300002: playerHeavyProjectile_1
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -31,7 +31,7 @@ TextureImporter:
   textureFormat: -1
   maxTextureSize: 2048
   textureSettings:
-    filterMode: -1
+    filterMode: 0
     aniso: 16
     mipBias: -1
     wrapMode: 1
@@ -55,26 +55,26 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: enemy1Range1Attack_0
+      name: playerHeavyProjectile_0
       rect:
         serializedVersion: 2
-        x: 15
-        y: 5
-        width: 44
-        height: 57
+        x: 25
+        y: 50
+        width: 14
+        height: 4
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: enemy1Range1Attack_1
+      name: playerHeavyProjectile_1
       rect:
         serializedVersion: 2
-        x: 101
-        y: 5
-        width: 44
-        height: 57
+        x: 26
+        y: 12
+        width: 14
+        height: 4
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
