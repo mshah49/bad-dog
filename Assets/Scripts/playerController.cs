@@ -112,7 +112,7 @@ public class playerController : MonoBehaviour {
 			} else {
 				if (canDoubleJump) {
 					canDoubleJump = false;
-					rigidBody.AddForce (new Vector2 (0, playerJumpHeight/1.5f));
+					rigidBody.AddForce (new Vector2 (0, playerJumpHeight/1.2f));
 					jumpAnimation ();
 				}
 			}
