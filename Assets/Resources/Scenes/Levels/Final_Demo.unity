@@ -967,6 +967,12 @@ Prefab:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 212000012960824334, guid: d116be3be5c7fef4884ad4ca422a5777,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: aa6cc5f2935b00a4990886d0be6b7bd4,
+        type: 3}
     m_RemovedComponents:
     - {fileID: 114000011106450242, guid: d116be3be5c7fef4884ad4ca422a5777, type: 2}
     - {fileID: 114000013003538834, guid: d116be3be5c7fef4884ad4ca422a5777, type: 2}
