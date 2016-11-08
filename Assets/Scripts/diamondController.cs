@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class coinController : MonoBehaviour {
+public class diamondController : MonoBehaviour {
 	private GameObject player;
 	public int coinWorth = 1;
 	// Use this for initialization
