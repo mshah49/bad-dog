@@ -276,6 +276,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   burnDamage: 0
   onFire: 0
+  colors:
+  - {r: 1, g: 0.03049311, b: 0.03049311, a: 1}
+  - {r: 1, g: 0, b: 0, a: 1}
 --- !u!212 &212000013204227276
 SpriteRenderer:
   m_ObjectHideFlags: 1

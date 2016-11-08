@@ -12,6 +12,8 @@ public class enemyOnFire : MonoBehaviour {
 	public float burnDamage;
 	public bool onFire;
 	SpriteRenderer renderer;
+	private Material mat;
+	public Color[] colors = {Color.red, Color.red};
 	// Use this for initialization
 	void Start () {
 	
@@ -20,11 +22,14 @@ public class enemyOnFire : MonoBehaviour {
 	void Awake(){
 		enemyHP = GetComponent<enemyHealth>();
 		renderer = GetComponent<SpriteRenderer>();
+		mat = GetComponent<SpriteRenderer>().material;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (onFire) {
+			int index = 0;
+			mat.color = colors[index % 4];
 			if (burnCountdown > 0) {
 				burnCountdown -= Time.deltaTime;
 			}
