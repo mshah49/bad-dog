@@ -172,8 +172,8 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
             ramRange = 12f;
             meleeRange = 7f;
             hitRange = 2f;
-            meleeDamage = 10f;
-            ramDamage = 10f;
+            meleeDamage = 1f;
+            ramDamage = 1f;
             enemyMaxSpeed = 4f;
             attackCooldownTimer = 3f;
             attackMaxLength = .5f;
@@ -193,7 +193,7 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
             enemyProjectileSpeed = 20.0f;
             isFacingRight = false;
             Flip(); //this enemy spawns facing left
-            rangeDamage =25f;
+            rangeDamage =4f;
         }
     }
 
@@ -586,7 +586,7 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
     {
         if(!isHurt)
         {
-            if (enemyName == "Enemy 1 Melee" && enemyHP.currentHP > 0)
+            if (enemyHP.currentHP > 0)
             {
                 setHurt();
                 isHurt = true;

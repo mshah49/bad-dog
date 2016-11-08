@@ -11,6 +11,7 @@ public class enemyOnFire : MonoBehaviour {
 	private float burnCountdownTimer = 0.5f;
 	public float burnDamage;
 	public bool onFire;
+	SpriteRenderer renderer;
 	// Use this for initialization
 	void Start () {
 	
@@ -18,6 +19,7 @@ public class enemyOnFire : MonoBehaviour {
 
 	void Awake(){
 		enemyHP = GetComponent<enemyHealth>();
+		renderer = GetComponent<SpriteRenderer>();
 	}
 	
 	// Update is called once per frame
@@ -37,6 +39,7 @@ public class enemyOnFire : MonoBehaviour {
 		chanceFire = Random.Range (0, 100);
 		if (chanceFire>75){
 			onFire = true;
+			renderer.color = new Color (234f,89f,10f,255F);
 		}
 	}
 	public void doDamage(){

@@ -134,9 +134,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  currentHP: 0
-  maxHP: 0
-  expGain: 0
+  currentHP: 2
+  maxHP: 2
+  expGain: 50
 --- !u!114 &114000013889477360
 MonoBehaviour:
   m_ObjectHideFlags: 1
