@@ -39,10 +39,8 @@ GameObject:
   - 61: {fileID: 61000013888647488}
   - 58: {fileID: 58000010688477456}
   - 95: {fileID: 95000013275269434}
-  - 114: {fileID: 114000011954858730}
-  - 114: {fileID: 114000012456575004}
-  - 114: {fileID: 114000014085541190}
-  - 114: {fileID: 114000012883096770}
+  - 114: {fileID: 114000013003538834}
+  - 114: {fileID: 114000011106450242}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -90,9 +88,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010855673864}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.7139329, y: 0.31067806, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 4}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 2}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 4000012606588328}
@@ -249,7 +247,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114000011954858730
+--- !u!114 &114000011106450242
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010855673864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4b952aa29938544188f14963817dc20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114000013003538834
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -260,67 +269,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a50ade54c83c0647ba596e34bf5088d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 0
-  playerJumpHeight: 0
+  playerHealth: 5
+  playerSpeed: 10
+  playerJumpHeight: 40
   playerDoubleJump: 0
-  playerAttack: 0
-  playerAttackTimer: 0
-  brawlerLevel: 1
-  mobilityLevel: 1
-  heavyLevel: 1
-  fireDamage: 1
+  playerAttack: 3
   gameManager: {fileID: 0}
   gunTip: {fileID: 4000010820508540}
   bullet: {fileID: 1000011260686076, guid: 3e85335a59f39334d9dc5fc29ebc31ce, type: 2}
-  playerProjectileSpeed: 0
-  playerFireRate: 2
+  playerAttackSpeed: 10
+  playerFireRate: 1
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
   groundCheck: {fileID: 4000012606588328}
-  attackTimer: 0
   currentStance: 0
---- !u!114 &114000012456575004
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010855673864}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8885bdba82e908447bd51e48bc6bcb2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentHP: 100
-  maxHP: 100
-  healthSlider: {fileID: 0}
---- !u!114 &114000012883096770
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010855673864}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b883ac6aca723e24a8611f053c489004, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stanceText: {fileID: 0}
---- !u!114 &114000014085541190
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010855673864}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6d40a4511c8afc4cb12cd35b283b82f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerLevel: 1
-  currentEXP: 0
-  maxEXP: 100
-  EXPSlider: {fileID: 0}
 --- !u!124 &124000011952227686
 Behaviour:
   m_ObjectHideFlags: 1
@@ -357,7 +320,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: aa6cc5f2935b00a4990886d0be6b7bd4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c4d309ffec36a9c459a9370bffa4e84a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
