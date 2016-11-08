@@ -1,16 +1,14 @@
 fileFormatVersion: 2
-guid: eedd35f0fbc2fd145af901043f37f418
-timeCreated: 1478599589
+guid: bd1e9c1ed3715b245b6465515f7e77ef
+timeCreated: 1478600194
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: settingObjects2_0
-    21300002: settingObjects2_1
-    21300004: settingObjects2_2
-    21300006: settingObjects2_3
-    21300008: settingObjects2_4
-    21300010: settingObjects2_5
-    21300012: settingObjects2_6
+    21300000: sign_0
+    21300002: sign_1
+    21300004: sign_2
+    21300006: sign_3
+    21300008: sign_4
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -60,91 +58,65 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: settingObjects2_0
+      name: sign_0
       rect:
         serializedVersion: 2
-        x: 63
-        y: 316
-        width: 32
-        height: 158
+        x: 42
+        y: 568
+        width: 24
+        height: 58
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: settingObjects2_1
+      name: sign_1
       rect:
         serializedVersion: 2
-        x: 191
-        y: 424
-        width: 144
-        height: 9
+        x: 42
+        y: 440
+        width: 24
+        height: 58
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: settingObjects2_2
+      name: sign_2
       rect:
         serializedVersion: 2
-        x: 63
-        y: 275
-        width: 705
-        height: 11
+        x: 42
+        y: 312
+        width: 24
+        height: 58
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: settingObjects2_3
+      name: sign_3
       rect:
         serializedVersion: 2
-        x: 63
-        y: 181
-        width: 705
-        height: 69
+        x: 42
+        y: 184
+        width: 24
+        height: 58
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: settingObjects2_4
+      name: sign_4
       rect:
         serializedVersion: 2
-        x: 56
-        y: 81
-        width: 144
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: settingObjects2_5
-      rect:
-        serializedVersion: 2
-        x: 250
-        y: 81
-        width: 26
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: settingObjects2_6
-      rect:
-        serializedVersion: 2
-        x: 316
-        y: 81
-        width: 365
-        height: 69
+        x: 42
+        y: 56
+        width: 24
+        height: 58
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

@@ -1,16 +1,15 @@
 fileFormatVersion: 2
-guid: eedd35f0fbc2fd145af901043f37f418
-timeCreated: 1478599589
+guid: 471eda4b86efead419f3237ecf2a3636
+timeCreated: 1478599567
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: settingObjects2_0
-    21300002: settingObjects2_1
-    21300004: settingObjects2_2
-    21300006: settingObjects2_3
-    21300008: settingObjects2_4
-    21300010: settingObjects2_5
-    21300012: settingObjects2_6
+    21300000: settingObjects_0
+    21300002: settingObjects_1
+    21300004: settingObjects_2
+    21300006: settingObjects_3
+    21300008: settingObjects_4
+    21300010: settingObjects_5
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -60,10 +59,10 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: settingObjects2_0
+      name: settingObjects_0
       rect:
         serializedVersion: 2
-        x: 63
+        x: 26
         y: 316
         width: 32
         height: 158
@@ -73,10 +72,10 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: settingObjects2_1
+      name: settingObjects_1
       rect:
         serializedVersion: 2
-        x: 191
+        x: 154
         y: 424
         width: 144
         height: 9
@@ -86,36 +85,23 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: settingObjects2_2
+      name: settingObjects_2
       rect:
         serializedVersion: 2
-        x: 63
-        y: 275
+        x: 26
+        y: 206
         width: 705
-        height: 11
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: settingObjects2_3
+      name: settingObjects_3
       rect:
         serializedVersion: 2
-        x: 63
-        y: 181
-        width: 705
-        height: 69
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: settingObjects2_4
-      rect:
-        serializedVersion: 2
-        x: 56
+        x: 19
         y: 81
         width: 144
         height: 80
@@ -125,10 +111,10 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: settingObjects2_5
+      name: settingObjects_4
       rect:
         serializedVersion: 2
-        x: 250
+        x: 213
         y: 81
         width: 26
         height: 80
@@ -138,10 +124,10 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: settingObjects2_6
+      name: settingObjects_5
       rect:
         serializedVersion: 2
-        x: 316
+        x: 279
         y: 81
         width: 365
         height: 69
