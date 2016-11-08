@@ -41,6 +41,8 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
 	public float leftRange;
     public float meleeDamage;
     public float ramDamage;
+    public float shootRange;
+    public bool inShootRange;
 	public bool equalX;
     public bool equalY;
     public bool checker;
@@ -105,6 +107,7 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
         groundObtained = false;
         ramming = false;
         attacking = false;
+        inShootRange = false;
         setStats();
         patrolLeftEnd = new Vector3(patrolMin, transform.position.y, 0); //left bound of patrol area
         patrolRightEnd = new Vector3(patrolMax, transform.position.y, 0); //right bound of patrol area
@@ -128,9 +131,9 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
             }
         }
         getRange(); //primarily used to display range in unity inspector at any given time
-        fixPatrolBound(); //corrects patrol coordinates of enemy while grounded
+        fixPatrolBound(); //corrects patrol coordinates of grounded enemies while grounded in case they spawn in the air
         checkVertical(); //checks vertical alignment with player
-        checkHorizontal();
+        checkHorizontal(); //checks horizontal alignment with player
 
 		if (inRange || setRam) //enemy is in range
 		{
@@ -158,7 +161,7 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
         {
             setHurt();
         }
-        countdownUpdate();
+        countdownUpdate(); //updates all time-based countdowns, cooldowns, etc.
 	}
 
     void setStats() //sets stats of enemies, based on type
@@ -180,7 +183,8 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
         }
         else if(enemyName == "Enemy 1 Range 1")
         {
-            range = 10f;
+            range = 12f;
+            shootRange = 7f;
             enemyMaxSpeed = 3f;
             attackCooldownTimer = 2f;
             attackMaxLength = .3f;
@@ -188,7 +192,7 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
             patrolMax = spawnX + 5;
             enemyProjectileSpeed = 20.0f;
             isFacingRight = false;
-            Flip();
+            Flip(); //this enemy spawns facing left
             rangeDamage = 4f;
         }
     }
@@ -253,6 +257,17 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
         else
         {
             inRange = false;
+        }
+        if(Vector3.Distance(transform.position, player.transform.position) < shootRange)
+        {
+            if(!inShootRange)
+            {
+                inShootRange = true;
+            }
+        }
+        else
+        {
+            inShootRange = false;
         }
         if (enemyName == "Enemy 1 Melee")
         {
@@ -375,16 +390,24 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
             {
                 Flip();
             }
-            if(attackCooldown <= 0 && !attackLaunched && equalY)
+            if(inShootRange)
             {
-                setAttack();
-                enemyBulletFire();
-                attackDuration = attackMaxLength;
-                attackLaunched = true;
+                if (attackCooldown <= 0 && !attackLaunched && equalY)
+                {
+                    setAttack();
+                    enemyBulletFire();
+                    attackDuration = attackMaxLength;
+                    attackLaunched = true;
+                }
+                else
+                {
+                    setIdle();
+                }
             }
-            else
+            else //player is out of shooting range but still in range; will chase player
             {
-                setIdle();
+                targetOnDifferentY = new Vector3(player.transform.position.x, spawnY, 0); //ignores y value of target
+                move(transform.position, targetOnDifferentY);
             }
         }
     }
@@ -472,7 +495,7 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
         }
     }
 
-    void enemyBulletFire()
+    void enemyBulletFire() //has enemy fire their weapon/projectile
     {
         if (isFacingRight)
         {
@@ -671,7 +694,7 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
         }
 	}
 
-    void fixPatrolBound()
+    void fixPatrolBound() //adjusts patrol bounds of grounded enemies in case they spawn in the air
     {
         if (enemyName == "Enemy 1 Melee")
         {
