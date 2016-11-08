@@ -38,8 +38,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000014007162566}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.68, y: -3.88, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 41.077744, y: -1.8783329, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -57,7 +57,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -71,7 +71,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
@@ -105,7 +105,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inRange: 0
+  inRamRange: 0
   inAttackRange: 0
+  inHitRange: 0
   isFacingRight: 1
   enemyMoveForce: 200
   enemyMaxSpeed: 4
@@ -123,12 +125,40 @@ MonoBehaviour:
   patrolCooldownTimer: 0
   attackIdle: 0
   patrolIdle: 0
+  patrolLeftEnd: {x: 0, y: 0, z: 0}
+  patrolRightEnd: {x: 0, y: 0, z: 0}
   ramLeft: 0
   ramRight: 0
   rightRange: 0
   leftRange: 0
+  meleeDamage: 50
+  ramDamage: 20
+  shootRange: 0
+  inShootRange: 0
   equalX: 0
+  equalY: 0
+  checker: 0
+  enemyName: 
+  canFlip: 0
+  isHurt: 0
+  hurtCountdownTimer: 0
+  hurtCountdown: 0
+  hurtTest: 0
+  hurtTestComplete: 0
+  targetOnDifferentY: {x: 0, y: 0, z: 0}
+  spawnY: 0
+  touchedGround: 0
+  groundObtained: 0
+  ramming: 0
+  attacking: 0
+  attackMaxLength: 0
+  attackDuration: 0
   isAttacking: 0
+  attackLaunched: 0
+  enemyProjectileSpeed: 0
+  rangeDamage: 0
+  enemyProjectile: {fileID: 0}
+  enemyGunTip: {fileID: 0}
 --- !u!114 &114000011130026948
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -140,8 +170,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58170fbad04cef9408867daee0d4f9f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   currentHP: 3
   maxHP: 3
+  expGain: 20
 --- !u!212 &212000013204227276
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -170,7 +202,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 6
   m_Sprite: {fileID: 21300000, guid: 565499fb10ba59948b3ec1fff1ee2256, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
