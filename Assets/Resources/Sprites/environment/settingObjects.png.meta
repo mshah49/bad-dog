@@ -1,9 +1,15 @@
 fileFormatVersion: 2
 guid: 471eda4b86efead419f3237ecf2a3636
-timeCreated: 1478591298
+timeCreated: 1478599567
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: settingObjects_0
+    21300002: settingObjects_1
+    21300004: settingObjects_2
+    21300006: settingObjects_3
+    21300008: settingObjects_4
+    21300010: settingObjects_5
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -29,8 +35,8 @@ TextureImporter:
   textureFormat: -1
   maxTextureSize: 2048
   textureSettings:
-    filterMode: -1
-    aniso: -1
+    filterMode: 0
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -38,7 +44,7 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -51,7 +57,85 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: settingObjects_0
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 316
+        width: 32
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: settingObjects_1
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 424
+        width: 144
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: settingObjects_2
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 206
+        width: 705
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: settingObjects_3
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 81
+        width: 144
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: settingObjects_4
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 81
+        width: 26
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: settingObjects_5
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 81
+        width: 365
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 
