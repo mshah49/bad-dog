@@ -260,8 +260,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  currentHP: 100
-  maxHP: 100
+  currentHP: 10
+  maxHP: 10
   expGain: 50
 --- !u!114 &114000012972506120
 MonoBehaviour:
