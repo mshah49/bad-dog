@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using UnityEngine;
 using System.Collections;
 
 [RequireComponent(typeof(Animator))]
@@ -20,8 +21,15 @@ public class playerController : MonoBehaviour {
 	public int heavyLevel = 1;
 	public int fireDamage = 1;
 	private playerHealthController playerHP;
+	public Vector2 playerVelocity;
 
-	bool playerGrounded = false;
+	public bool FacingRight {
+		get { return spriteRenderer.flipX == false; }
+		set { spriteRenderer.flipX = !value; }
+	}
+
+
+	bool playerGrounded;
 	bool facingRight;
 	bool isHurt;
 
@@ -37,13 +45,13 @@ public class playerController : MonoBehaviour {
 	public GameObject bullet;
 	public float playerProjectileSpeed;
 	public float playerFireRate = 2.0f;
-	float nextFire = 0.0f;
+    private float nextFire;
 
 	//ground check
 	float groundCheckRadius = 0.2f;
 	public LayerMask groundLayer;
 	public Transform groundCheck;
-
+	private bool hasLeftGround;
 	//stances
 	public enum playerStance{
 		brawler,heavy,mobility,
@@ -71,52 +79,61 @@ public class playerController : MonoBehaviour {
 		isAttacking (false);
 
 	}
-		
+
 	// Use this for initialization
 
 	// Update is called once per frame, use for game physics such as movement or bullets or stance change
-	public void Update () {
-		
-		//check for ground
-		playerGrounded = Physics2D.OverlapCircle(groundCheck.position,groundCheckRadius,groundLayer);
+	public void FixedUpdate () {
+		GroundCheck ();
 		if (playerGrounded) {
-			groundedAnimation (true);
+			groundedAnimation (playerGrounded);
 		}
-		//playerMovement
+		playerVelocity = Vector2.zero;
+	}
+	public void Update () {
+		if (playerVelocity == Vector2.zero) {
+			idleAnimation ();
+		}
 		float playerMove = Input.GetAxis ("Horizontal");
-		if(playerMove != 0.0f){
-			rigidBody.velocity = new Vector2 (playerMove * playerSpeed, rigidBody.velocity.y);
-			runAnimation(true);
-		}
-		else if (playerMove == 0.0f){
-			idleAnimation();
+		if(Mathf.Abs(playerMove) > 0.0f){
+			Move (playerMove);
+			runAnimation (true);
 		}
 
-		//Check direction to flip sprite
-		if (playerMove > 0 && !facingRight) 
-			spriteflip ();
-		else if (playerMove < 0 && facingRight)
-			spriteflip ();
-
-
-
-		//playerJump
-		if (Input.GetKeyDown("space") && currentStance != playerStance.heavy) {
+		if (Input.GetKeyDown ("space") && currentStance != playerStance.heavy) {
 			if (playerGrounded) {
-				rigidBody.AddForce (new Vector2 (0, playerJumpHeight));
+				print (playerVelocity);
+				playerVelocity = new Vector2 (rigidBody.velocity.x, Mathf.Sqrt (-2.0f * playerJumpHeight * Physics2D.gravity.y));
+				print (playerVelocity);
 				jumpAnimation ();
 				if (currentStance == playerStance.mobility && mobilityLevel > 1) {
 					canDoubleJump = true;
-				}	
-
+				}
 			} else {
 				if (canDoubleJump) {
 					canDoubleJump = false;
-					rigidBody.AddForce (new Vector2 (0, playerJumpHeight/1.2f));
+					playerVelocity = Vector2.zero;
+					playerVelocity = new Vector2 (rigidBody.velocity.x, Mathf.Sqrt (-2.0f * playerJumpHeight*1.5f*Physics2D.gravity.y));
 					jumpAnimation ();
 				}
 			}
+			}
+
+		if (playerVelocity != Vector2.zero) {
+			// Change the Velocity of our actor
+			rigidBody.velocity = playerVelocity;
+			// If we're supposed to be going up, and we're already grounded, make sure we leave the ground
 		}
+
+		//playerMovement
+
+		//playerVelocity = Vector2.zero;
+
+		//Check direction to flip sprite
+		//Check direction to flip sprite
+
+		//playerJump
+
 
 		//setting player level for testing and demo
 		//reset all to level 1
@@ -138,8 +155,8 @@ public class playerController : MonoBehaviour {
 			heavyLevel = 2;
 		}
 
-			
-			
+
+
 		//change stances
 		if (Input.GetKeyDown("z")){
 			updateStance (playerStance.mobility);
@@ -201,12 +218,12 @@ public class playerController : MonoBehaviour {
 
 	//attack 
 	void fireRocket(){
-			if (facingRight) {
-				Instantiate (bullet, gunTip.position, Quaternion.Euler (new Vector3 (0, 0, 0)));
-			} else if (!facingRight) {
-				Instantiate (bullet, gunTip.position, Quaternion.Euler (new Vector3 (0, 0, 180f)));
-			}
+		if (FacingRight) {
+			Instantiate (bullet, gunTip.position, Quaternion.Euler (new Vector3 (0, 0, 0)));
+		} else if (!FacingRight) {
+			Instantiate (bullet, gunTip.position, Quaternion.Euler (new Vector3 (0, 0, 180)));
 		}
+	}
 
 	//changes animations
 	private IEnumerator ChangeAnimatorController(string name) {
@@ -237,7 +254,6 @@ public class playerController : MonoBehaviour {
 	private void jumpAnimation(){
 		animator.SetTrigger ("jumpPressed");
 		animator.SetBool ("isGrounded", false);
-		print ("jumped");
 	}
 
 	private void groundedAnimation(bool value){
@@ -257,8 +273,8 @@ public class playerController : MonoBehaviour {
 	public void updateStance(playerStance newStance){
 		if (newStance == playerStance.brawler){
 			currentStance = playerStance.brawler;
-			playerSpeed = 10.0f;
-			playerJumpHeight = 150.0f;
+			playerSpeed = 5.0f;
+			playerJumpHeight = 2.5f;
 			playerDoubleJump = false;
 			playerAttack = 2f;
 			playerFireRate = 1f;
@@ -268,8 +284,8 @@ public class playerController : MonoBehaviour {
 		}
 		else if (newStance == playerStance.heavy){
 			currentStance = playerStance.heavy;
-			playerSpeed = 5.0f;
-			playerJumpHeight = 100.0f;
+			playerSpeed = 4.0f;
+			playerJumpHeight = 0.0f;
 			playerDoubleJump = false;
 			playerAttack = 6f; 
 			playerFireRate = 2f;
@@ -278,8 +294,8 @@ public class playerController : MonoBehaviour {
 		}
 		else if (newStance == playerStance.mobility){
 			currentStance = playerStance.mobility;
-			playerSpeed = 15.0f;
-			playerJumpHeight = 200.0f;
+			playerSpeed = 7.0f;
+			playerJumpHeight = 3.0f;
 			playerDoubleJump = true;
 			playerAttack = 1f;
 			playerFireRate = 0.5f;
@@ -302,6 +318,41 @@ public class playerController : MonoBehaviour {
 				//hurtCountdown = hurtCountdownTimer;
 			}
 		}
+	}
+
+	/// <summary>
+	/// Move our actor in a desired direction
+	/// </summary>
+	/// <param name="direction">Positive is right, negative is left, 1.0f is the normal speed of the actor</param>
+	public void Move(float direction) {
+		// If our direction is positive, we're moving to the right
+		if (direction > 0.0f) {
+			FacingRight = true;
+			// Otherwise, we're going left
+			// Note: we don't care about 0.0f, because it'd be unusual for our character to constantly face right
+		} else if (direction < 0.0f) {
+			FacingRight = false;
+		}
+
+		// Set our Velocity to move on the next FixedUpdate tick
+		playerVelocity = new Vector2(direction * playerSpeed, rigidBody.velocity.y);
+	}
+
+	private void GroundCheck() {
+		// Cast a box below us just a hair to see if there's any objects below us
+		var hits = Physics2D.BoxCastAll(boxCollider.bounds.center, new Vector2(boxCollider.bounds.size.x * 0.9f, boxCollider.bounds.size.y), 0.0f, Vector2.down, 0.5f);
+
+		// Check to see if any of the things we hit is in the Terrain layer and that we've already left the ground
+		if (hits.Any(hit => hit.collider.gameObject.layer == LayerMask.NameToLayer("Ground"))) {
+			playerGrounded = true;
+		} else {
+			playerGrounded = false;
+			// If we can't hit the ground anymore, that means we've successfully left the ground below us
+			hasLeftGround = true;
+		}
+	}
+	public void UpdateCollider() {
+		boxCollider.size = spriteRenderer.bounds.size;
 	}
 
 }
