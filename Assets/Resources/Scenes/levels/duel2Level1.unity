@@ -169,11 +169,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000013151614598, guid: b5083a21d2006ad4fa5babfabffae4da, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 5.81
+      value: 14.67
       objectReference: {fileID: 0}
     - target: {fileID: 4000013151614598, guid: b5083a21d2006ad4fa5babfabffae4da, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -8.43
+      value: -8.68
       objectReference: {fileID: 0}
     - target: {fileID: 4000013151614598, guid: b5083a21d2006ad4fa5babfabffae4da, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2429,7 +2429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8885bdba82e908447bd51e48bc6bcb2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHP: 100
+  currentHP: 250
   maxHP: 100
   healthSlider: {fileID: 1964546568}
 --- !u!114 &495015915
@@ -2872,11 +2872,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000013917168584, guid: e106b52be7166f443bf95f0a932f9e05, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 31.9
+      value: 31.98
       objectReference: {fileID: 0}
     - target: {fileID: 4000013917168584, guid: e106b52be7166f443bf95f0a932f9e05, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -12
+      value: -12.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e106b52be7166f443bf95f0a932f9e05, type: 2}

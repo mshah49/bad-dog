@@ -25,7 +25,7 @@ public class projectileHit : MonoBehaviour {
                 EnemyController enemyController = other.gameObject.GetComponent<EnemyController>();
 				enemyController.inflictDamage(playerController.playerAttack);
 
-				if (playerController.currentStance == playerController.playerStance.heavy) {
+				if (playerController.currentStance == playerController.playerStance.heavy && playerController.heavyLevel >= 2) {
 					enemyOnFire enemyOnFire = other.gameObject.GetComponent<enemyOnFire> ();
 					enemyOnFire.catchFire ();
 				}
