@@ -2413,40 +2413,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4000014002275920, guid: 41ca9ce297e58e64481574fbc663f952,
     type: 2}
   m_PrefabInternal: {fileID: 487679228}
---- !u!1 &495015905 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1000010855673864, guid: d116be3be5c7fef4884ad4ca422a5777,
-    type: 2}
-  m_PrefabInternal: {fileID: 1190879290}
---- !u!114 &495015914
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 495015905}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8885bdba82e908447bd51e48bc6bcb2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentHP: 250
-  maxHP: 100
-  healthSlider: {fileID: 1964546568}
---- !u!114 &495015915
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 495015905}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6d40a4511c8afc4cb12cd35b283b82f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerLevel: 1
-  currentEXP: 0
-  maxEXP: 100
-  EXPSlider: {fileID: 574155864}
 --- !u!1001 &498975372
 Prefab:
   m_ObjectHideFlags: 0
@@ -3100,11 +3066,6 @@ Prefab:
     - target: {fileID: 4000011714626232, guid: 6cba2ba329b7a834fa3e80dab9a7dfce, type: 2}
       propertyPath: m_RootOrder
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 212000013699330240, guid: 6cba2ba329b7a834fa3e80dab9a7dfce,
-        type: 2}
-      propertyPath: m_SortingOrder
-      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6cba2ba329b7a834fa3e80dab9a7dfce, type: 2}
@@ -4550,7 +4511,8 @@ GameObject:
   - 114: {fileID: 1177695429}
   - 50: {fileID: 1177695428}
   - 95: {fileID: 1177695427}
-  m_Layer: 0
+  - 58: {fileID: 1177695432}
+  m_Layer: 10
   m_Name: move-post
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4583,8 +4545,8 @@ Rigidbody2D:
     type: 2}
   m_PrefabInternal: {fileID: 2037250357}
   m_GameObject: {fileID: 1177695426}
-  m_UseAutoMass: 0
-  m_Mass: 1
+  m_UseAutoMass: 1
+  m_Mass: 1.2863175
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -4656,6 +4618,20 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!58 &1177695432
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1177695426}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.12797618
 --- !u!1 &1188783266
 GameObject:
   m_ObjectHideFlags: 0
@@ -4810,11 +4786,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000010768943376, guid: d116be3be5c7fef4884ad4ca422a5777, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -4.23
+      value: -4.22
       objectReference: {fileID: 0}
     - target: {fileID: 4000010768943376, guid: d116be3be5c7fef4884ad4ca422a5777, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.01
+      value: 0.88
       objectReference: {fileID: 0}
     - target: {fileID: 4000010768943376, guid: d116be3be5c7fef4884ad4ca422a5777, type: 2}
       propertyPath: m_LocalPosition.z
@@ -4840,29 +4816,25 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114000011348537212, guid: d116be3be5c7fef4884ad4ca422a5777,
+        type: 2}
+      propertyPath: EXPSlider
+      value: 
+      objectReference: {fileID: 574155864}
+    - target: {fileID: 114000011015064758, guid: d116be3be5c7fef4884ad4ca422a5777,
+        type: 2}
+      propertyPath: healthSlider
+      value: 
+      objectReference: {fileID: 1964546568}
     - target: {fileID: 114000011673619340, guid: d116be3be5c7fef4884ad4ca422a5777,
         type: 2}
       propertyPath: stanceText
       value: 
       objectReference: {fileID: 1450365736}
-    - target: {fileID: 20000010372161842, guid: d116be3be5c7fef4884ad4ca422a5777,
+    - target: {fileID: 50000013022043002, guid: d116be3be5c7fef4884ad4ca422a5777,
         type: 2}
-      propertyPath: m_BackGroundColor.r
-      value: 0.23529413
-      objectReference: {fileID: 0}
-    - target: {fileID: 20000010372161842, guid: d116be3be5c7fef4884ad4ca422a5777,
-        type: 2}
-      propertyPath: m_BackGroundColor.g
-      value: 0.24313727
-      objectReference: {fileID: 0}
-    - target: {fileID: 20000010372161842, guid: d116be3be5c7fef4884ad4ca422a5777,
-        type: 2}
-      propertyPath: m_BackGroundColor.b
-      value: 0.6901961
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000010855673864, guid: d116be3be5c7fef4884ad4ca422a5777, type: 2}
-      propertyPath: m_Layer
-      value: 10
+      propertyPath: m_Mass
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d116be3be5c7fef4884ad4ca422a5777, type: 2}
@@ -5010,11 +4982,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000013306595488, guid: e8dd7418821754d49a936c89f43ddb56, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -3.8
+      value: -4.15
       objectReference: {fileID: 0}
     - target: {fileID: 4000013306595488, guid: e8dd7418821754d49a936c89f43ddb56, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 5.447021
+      value: 4.56
       objectReference: {fileID: 0}
     - target: {fileID: 4000013306595488, guid: e8dd7418821754d49a936c89f43ddb56, type: 2}
       propertyPath: m_LocalPosition.z
@@ -5951,7 +5923,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000011735916066, guid: d26479324143a1d4bb36ba43300f1d75, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 3.95
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000011735916066, guid: d26479324143a1d4bb36ba43300f1d75, type: 2}
       propertyPath: m_LocalPosition.z
@@ -8451,6 +8423,20 @@ Prefab:
         type: 2}
       propertyPath: Tip
       value: Move using the Arrow Keys
+      objectReference: {fileID: 0}
+    - target: {fileID: 50000013770738204, guid: 715d3689a0c79794c8e74c491f72ca1e,
+        type: 2}
+      propertyPath: m_UseAutoMass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 50000013770738204, guid: 715d3689a0c79794c8e74c491f72ca1e,
+        type: 2}
+      propertyPath: m_Mass
+      value: 6.6051984
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000011817858750, guid: 715d3689a0c79794c8e74c491f72ca1e, type: 2}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 715d3689a0c79794c8e74c491f72ca1e, type: 2}
