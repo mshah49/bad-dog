@@ -88,6 +88,12 @@ public class playerController : MonoBehaviour {
 		if (playerGrounded) {
 			groundedAnimation (playerGrounded);
 		}
+
+		if (playerVelocity != Vector2.zero) {
+			// Change the Velocity of our actor
+			rigidBody.velocity = playerVelocity;
+			// If we're supposed to be going up, and we're already grounded, make sure we leave the ground
+		}
 		playerVelocity = Vector2.zero;
 	}
 	public void Update () {
@@ -96,11 +102,11 @@ public class playerController : MonoBehaviour {
 		}
 		float playerMove = Input.GetAxis ("Horizontal");
 		if(Mathf.Abs(playerMove) > 0.0f){
-			Move (playerMove);
+				Move (playerMove);
 			runAnimation (true);
 		}
 
-		if (Input.GetKeyDown ("space") && currentStance != playerStance.heavy) {
+		if(Input.GetKeyDown ("space") && currentStance != playerStance.heavy) {
 			if (playerGrounded) {
 				print (playerVelocity);
 				playerVelocity = new Vector2 (rigidBody.velocity.x, Mathf.Sqrt (-2.0f * playerJumpHeight * Physics2D.gravity.y));
@@ -118,12 +124,6 @@ public class playerController : MonoBehaviour {
 				}
 			}
 			}
-
-		if (playerVelocity != Vector2.zero) {
-			// Change the Velocity of our actor
-			rigidBody.velocity = playerVelocity;
-			// If we're supposed to be going up, and we're already grounded, make sure we leave the ground
-		}
 
 		//playerMovement
 
@@ -274,7 +274,7 @@ public class playerController : MonoBehaviour {
 		if (newStance == playerStance.brawler){
 			currentStance = playerStance.brawler;
 			playerSpeed = 5.0f;
-			playerJumpHeight = 2.5f;
+			playerJumpHeight = 1.5f;
 			playerDoubleJump = false;
 			playerAttack = 2f;
 			playerFireRate = 1f;
@@ -295,7 +295,7 @@ public class playerController : MonoBehaviour {
 		else if (newStance == playerStance.mobility){
 			currentStance = playerStance.mobility;
 			playerSpeed = 7.0f;
-			playerJumpHeight = 3.0f;
+			playerJumpHeight = 2.0f;
 			playerDoubleJump = true;
 			playerAttack = 1f;
 			playerFireRate = 0.5f;
