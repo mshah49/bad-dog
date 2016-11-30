@@ -36,6 +36,11 @@ public class EnemyBulletController : MonoBehaviour {
             playerController.takeDamage(enemyController.rangeDamage);
             Destroy(gameObject);
         }
+
+        if(other.tag == "Ground")
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void removeForce()

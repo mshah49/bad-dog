@@ -71,7 +71,7 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
 
 	// Use this for initialization
 	void Awake () {
-		player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("Player");
 		animator = GetComponent<Animator>();
         enemyHP = GetComponent<enemyHealth>(); //gets enemyHealth component from inspector
 		inRange = false; //checks if enemy is detected
@@ -84,19 +84,23 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
 		patrolCooldownTimer = 3f;
 		spawnX = transform.position.x; //stores the x coordinate of spawn so that patrol boundaries may be calculated
         spawnY = transform.position.y;
-		attackIdle = false;
+        attackIdle = false;
 		patrolIdle = false;
 		equalX = false; //checks to see if enemy and player are vertically aligned
         checker = false;
         enemyName = "";
         isHurt = false;
-        if(name.Contains("enemy1Melee")) //checks the name for the substring
+        if (name.Contains("enemy1Melee")) //checks the name for the substring
         {
             enemyName = "Enemy 1 Melee"; //name is set in case of extra spawns which are numbered (e.g. "enemy1Melee (1)", etc.)
         }
         if(name.Contains("enemy1Range1"))
         {
             enemyName = "Enemy 1 Range 1";
+        }
+        if(name.Contains("enemy1Range2"))
+        {
+            enemyName = "Enemy 1 Range 2";
         }
         enemyHP.setHP(enemyName);
         canFlip = true;
@@ -179,7 +183,6 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
             attackMaxLength = .5f;
             patrolMin = spawnX - 10;
             patrolMax = spawnX + 10;
-            enemyProjectileSpeed = 20.0f;
         }
         else if(enemyName == "Enemy 1 Range 1")
         {
@@ -190,10 +193,19 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
             attackMaxLength = .3f;
             patrolMin = spawnX - 5;
             patrolMax = spawnX + 5;
-            enemyProjectileSpeed = 20.0f;
             isFacingRight = false;
             Flip(); //this enemy spawns facing left
-            rangeDamage =4f;
+            rangeDamage = 4f;
+        }
+        else if(enemyName == "Enemy 1 Range 2")
+        {
+            range = 10f;
+            enemyMaxSpeed = 2.5f;
+            attackCooldownTimer = 4f;
+            attackMaxLength = .6f;
+            patrolMin = spawnX - 15;
+            patrolMax = spawnX + 15;
+            rangeDamage = 3f;
         }
     }
 
@@ -410,6 +422,29 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
                 move(transform.position, targetOnDifferentY);
             }
         }
+        else if(enemyName == "Enemy 1 Range 2")
+        {
+            if(equalX)
+            {
+                if(attackCooldown <= 0 && !attackLaunched)
+                {
+                    setAttack();
+                    enemyBulletFire();
+                    attackDuration = attackMaxLength;
+                    attackLaunched = true;
+                }
+                else
+                {
+                    setIdle();
+                }
+            }
+            else if(!attackLaunched)
+            {
+                setIdle();
+                targetOnDifferentY = new Vector3(player.transform.position.x, player.transform.position.y + 5, 0);
+                move(transform.position, targetOnDifferentY);
+            }
+        }
     }
 
     void meleeRamThePlayer() //ramming function for enemy 1 melee
@@ -551,6 +586,14 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
                 move(transform.position, patrolLeftEnd);
             }
         }
+        if(enemyName == "Enemy 1 Range 2") //if flying enemy is not at original spawn height, it will move back to it
+        {
+            if(transform.position.y != spawnY)
+            {
+                targetOnDifferentY = new Vector3(transform.position.x, spawnY, 0);
+                move(transform.position, targetOnDifferentY);
+            }
+        }
     }
 
     void move(Vector3 start, Vector3 end) //move function
@@ -614,6 +657,10 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
             {
                 animator.SetTrigger("enemy1Range1Idle");
             }
+            else if(enemyName == "Enemy 1 Range 2")
+            {
+                animator.SetTrigger("enemy1Range2Idle");
+            }
         }
     }
 
@@ -628,6 +675,10 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
         else if(enemyName == "Enemy 1 Range 1")
         {
             animator.SetTrigger("enemy1Range1Hurt");
+        }
+        else if (enemyName == "Enemy 1 Range 2")
+        {
+            animator.SetTrigger("enemy1Range2Hurt");
         }
     }
 
@@ -658,6 +709,10 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
             else if(enemyName == "Enemy 1 Range 1")
             {
                 animator.SetTrigger("enemy1Range1Attack");
+            }
+            else if (enemyName == "Enemy 1 Range 2")
+            {
+                animator.SetTrigger("enemy1Range2Attack");
             }
         }
     }
