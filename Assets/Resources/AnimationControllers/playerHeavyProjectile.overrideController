@@ -6,5 +6,5 @@ AnimatorOverrideController:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: playerHeavyProjectile
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 391666848670f5f489ae78bfdce8df6e, type: 2}
   m_Clips: []
