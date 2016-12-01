@@ -7,9 +7,13 @@ public class enemyHealth : MonoBehaviour {
 	public float currentHP;
 	public int maxHP;
 	public int expGain = 0;
+    private EnemyController enemy;
+    public bool test;
 
 	// Use this for initialization
 	void awake(){
+        enemy = GetComponent<EnemyController>();
+        test = false;
 	}
 
 
@@ -24,19 +28,19 @@ public class enemyHealth : MonoBehaviour {
             currentHP = maxHP;
         }
 	}
-
-    public void setHP(string enemyName)
-    {
-        currentHP = maxHP;
-    }
-
+    
 	public void addDamage (float damage){
 		float text = damage;
-		floatingTextController.createFloatingText (text.ToString(), transform);
-		currentHP -= damage;
+		//floatingTextController.createFloatingText (text.ToString(), transform);
+        //Commented above line for testing
+        currentHP -= damage;
 		if (currentHP <= 0) {
 			enemyEXP (expGain);
-			killEnemy ();
+            if(enemy.enemyName.Contains("Boss") && enemy.deathTimerCountdown <= 0)
+            {
+                test = true;
+                killEnemy();
+            }
 		}
 
 	}

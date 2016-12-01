@@ -67,9 +67,23 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
     public float rangeDamage;
     public GameObject enemyProjectile;
     public Transform enemyGunTip;
+    public bool isSummoning;
+    public float summonAction;
+    public float summonActionTimer;
+    public int summonCount;
+    public int maxSummonCount;
+    public bool test;
+    public GameObject enemyToSummon;
+    public Transform summonPoint1;
+    public Transform summonPoint2;
+    public Transform summonPoint3;
+    public float deathTimer;
+    public float deathTimerCountdown;
+    public bool isDead;
 
 	// Use this for initialization
 	void Awake () {
+        test = false;
         player = GameObject.FindGameObjectWithTag("Player");
 		animator = GetComponent<Animator>();
         enemyHP = GetComponent<enemyHealth>(); //gets enemyHealth component from inspector
@@ -80,6 +94,7 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
 		walking = false; //used to check if enemy is walking
 		attackCooldown = 0;
 		patrolCooldown = 0;
+        summonAction = 0;
 		patrolCooldownTimer = 3f;
 		spawnX = transform.position.x; //stores the x coordinate of spawn so that patrol boundaries may be calculated
         spawnY = transform.position.y;
@@ -101,9 +116,30 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
         {
             enemyName = "Enemy 1 Range 2";
         }
-        enemyHP.setHP(enemyName);
+        if(name.Contains("enemy2Melee"))
+        {
+            enemyName = "Enemy 2 Melee";
+        }
+        if(name.Contains("enemy2Range1"))
+        {
+            enemyName = "Enemy 2 Range 1";
+        }
+        if(name.Contains("enemy2Range2"))
+        {
+            enemyName = "Enemy 2 Range 2";
+        }
+        if(name.Contains("boss1"))
+        {
+            enemyName = "Boss 1";
+        }
+        if (name.Contains("boss2"))
+        {
+            enemyName = "Boss 2";
+        }
         canFlip = true;
         hurtCountdownTimer = 0.5f;
+        deathTimerCountdown = 0f;
+        summonCount = 0;
         hurtTest = false;
         hurtTestComplete = false;
         touchedGround = false;
@@ -116,6 +152,7 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
         patrolRightEnd = new Vector3(patrolMax, transform.position.y, 0); //right bound of patrol area
         isAttacking = false;
         attackLaunched = false;
+        isDead = false;
     }
 
     // Update is called once per frame
@@ -130,7 +167,7 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
         {
             if (!hurtTestComplete)
             {
-                damageTest();
+                inflictDamage(1);
             }
         }
         getRange(); //primarily used to display range in unity inspector at any given time
@@ -206,6 +243,73 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
             patrolMax = spawnX + 15;
             rangeDamage = 3f;
         }
+        else if(enemyName == "Enemy 2 Melee")
+        {
+            range = 10f;
+            hitRange = 1.75f;
+            meleeDamage = 1f;
+            enemyMaxSpeed = 3f;
+            attackCooldownTimer = 3f;
+            attackMaxLength = .5f;
+            patrolMin = spawnX - 5;
+            patrolMax = spawnX + 5;
+        }
+        else if (enemyName == "Enemy 2 Range 1")
+        {
+            range = 12f;
+            shootRange = 7f;
+            enemyMaxSpeed = 3f;
+            attackCooldownTimer = 2f;
+            attackMaxLength = .3f;
+            patrolMin = spawnX - 5;
+            patrolMax = spawnX + 5;
+            isFacingRight = false;
+            Flip(); //this enemy spawns facing left
+            rangeDamage = 4f;
+        }
+        else if (enemyName == "Enemy 2 Range 2")
+        {
+            range = 10f;
+            enemyMaxSpeed = 2.5f;
+            attackCooldownTimer = 4f;
+            attackMaxLength = .6f;
+            patrolMin = spawnX - 15;
+            patrolMax = spawnX + 15;
+            rangeDamage = 3f;
+        }
+        else if(enemyName == "Boss 1")
+        {
+            range = 20f;
+            shootRange = 7f;
+            enemyMaxSpeed = 3f;
+            attackCooldownTimer = 2f;
+            attackMaxLength = .6f;
+            patrolMin = spawnX - 5;
+            patrolMax = spawnX + 5;
+            isFacingRight = false;
+            Flip(); //this enemy spawns facing left
+            rangeDamage = 4f;
+            summonActionTimer = .8f;
+            maxSummonCount = 3;
+            deathTimer = .8f;
+        }
+        else if(enemyName == "Boss 2")
+        {
+            range = 20f;
+            hitRange = 1.75f;
+            meleeDamage = 2f;
+            enemyMaxSpeed = 3f;
+            attackCooldownTimer = 3f;
+            attackMaxLength = .5f;
+            patrolMin = spawnX - 5;
+            patrolMax = spawnX + 5;
+            isFacingRight = false; //this enemy spawns facing left
+            Flip();
+            summonActionTimer = .8f;
+            maxSummonCount = 3;
+            test = true;
+            //deathTimer = .8f; //unused
+        }
     }
 
     void countdownUpdate() //updates all time-based countdowns
@@ -233,6 +337,15 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
             attackIdle = false;
         }
         
+        if(summonAction > 0)
+        {
+            summonAction -= Time.deltaTime;
+        }
+        else
+        {
+            isSummoning = false;
+        }
+
         if (patrolCooldown > 0)
         {
             patrolCooldown -= Time.deltaTime;
@@ -253,6 +366,26 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
             {
                 enemyMaxSpeed = 12f;
             }
+        }
+        if(enemyName == "Boss 1" && !isDead)
+        {
+            if (enemyHP.currentHP <= 0)
+            {
+                isDead = true;
+                deathTimerCountdown = deathTimer;
+            }
+        }
+        if(isDead)
+        {
+            setDeath();
+        }
+        if (deathTimerCountdown > 0)
+        {
+            deathTimerCountdown -= Time.deltaTime;
+        }
+        else if(deathTimerCountdown <= 0 && isDead)
+        {
+            Destroy(gameObject);
         }
     }
 
@@ -313,6 +446,20 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
             {
                 inAttackRange = false;
             }
+            if (Vector3.Distance(transform.position, player.transform.position) < hitRange) //enemy detection
+            {
+                if (!inHitRange)
+                {
+                    inHitRange = true;
+                }
+            }
+            else
+            {
+                inHitRange = false;
+            }
+        }
+        if(enemyName == "Enemy 2 Melee" || enemyName == "Boss 2")
+        {
             if (Vector3.Distance(transform.position, player.transform.position) < hitRange) //enemy detection
             {
                 if (!inHitRange)
@@ -391,7 +538,7 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
                 move(transform.position, targetOnDifferentY);
             }
         }
-        else if(enemyName == "Enemy 1 Range 1")
+        else if(enemyName == "Enemy 1 Range 1" || enemyName == "Enemy 2 Range 1")
         {
             if (player.transform.position.x < transform.position.x && isFacingRight)
             {
@@ -421,7 +568,7 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
                 move(transform.position, targetOnDifferentY);
             }
         }
-        else if(enemyName == "Enemy 1 Range 2")
+        else if(enemyName == "Enemy 1 Range 2" || enemyName == "Enemy 2 Range 2")
         {
             if(equalX)
             {
@@ -442,6 +589,75 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
                 setIdle();
                 targetOnDifferentY = new Vector3(player.transform.position.x, player.transform.position.y + 5, 0);
                 move(transform.position, targetOnDifferentY);
+            }
+        }
+        else if(enemyName == "Enemy 2 Melee")
+        {
+            meleeAttackThePlayer();
+        }
+        else if(enemyName == "Boss 1" && !isDead)
+        {
+            if (player.transform.position.x < transform.position.x && isFacingRight)
+            {
+                Flip();
+            }
+            else if (transform.position.x < player.transform.position.x && !isFacingRight)
+            {
+                Flip();
+            }
+            if(summonCount <= 0)
+            {
+                setSummon();
+                isSummoning = true;
+                summonAction = summonActionTimer;
+                Instantiate(enemyToSummon, summonPoint1.position, Quaternion.Euler(new Vector3(0, 0, 0)));
+                Instantiate(enemyToSummon, summonPoint2.position, Quaternion.Euler(new Vector3(0, 0, 0)));
+                Instantiate(enemyToSummon, summonPoint3.position, Quaternion.Euler(new Vector3(0, 0, 0)));
+                summonCount = maxSummonCount;
+            }
+            else if (inShootRange && summonAction <= 0)
+            {
+                if (attackCooldown <= 0 && !attackLaunched && equalY)
+                {
+                    setAttack();
+                    enemyBulletFire();
+                    attackDuration = attackMaxLength;
+                    attackLaunched = true;
+                }
+                else
+                {
+                    setIdle();
+                }
+            }
+            else //player is out of shooting range but still in range; will chase player
+            {
+                targetOnDifferentY = new Vector3(player.transform.position.x, spawnY, 0); //ignores y value of target
+                move(transform.position, targetOnDifferentY);
+            }
+        }
+        else if (enemyName == "Boss 2" && !isDead)
+        {
+            if (player.transform.position.x < transform.position.x && isFacingRight)
+            {
+                Flip();
+            }
+            else if (transform.position.x < player.transform.position.x && !isFacingRight)
+            {
+                Flip();
+            }
+            if (summonCount <= 0)
+            {
+                setSummon();
+                isSummoning = true;
+                summonAction = summonActionTimer;
+                Instantiate(enemyToSummon, summonPoint1.position, Quaternion.Euler(new Vector3(0, 0, 0)));
+                Instantiate(enemyToSummon, summonPoint2.position, Quaternion.Euler(new Vector3(0, 0, 0)));
+                Instantiate(enemyToSummon, summonPoint3.position, Quaternion.Euler(new Vector3(0, 0, 0)));
+                summonCount = maxSummonCount;
+            }
+            else
+            {
+                meleeAttackThePlayer();
             }
         }
     }
@@ -585,7 +801,7 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
                 move(transform.position, patrolLeftEnd);
             }
         }
-        if(enemyName == "Enemy 1 Range 2") //if flying enemy is not at original spawn height, it will move back to it
+        if(enemyName == "Enemy 1 Range 2" || enemyName == "Enemy 2 Range 2") //if flying enemy is not at original spawn height, it will move back to it
         {
             if(transform.position.y != spawnY)
             {
@@ -638,11 +854,6 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
         }
     }
 
-    public void damageTest() //tests hurt animation
-    {
-        inflictDamage(1);
-    }
-
     public void setIdle() //triggers idle animation
     {
         if (!isHurt && !attackLaunched) //idle animation cannot be triggered if hurt
@@ -659,6 +870,26 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
             else if(enemyName == "Enemy 1 Range 2")
             {
                 animator.SetTrigger("enemy1Range2Idle");
+            }
+            else if(enemyName == "Enemy 2 Melee")
+            {
+                animator.SetTrigger("enemy2MeleeIdle");
+            }
+            else if (enemyName == "Enemy 2 Range 1")
+            {
+                animator.SetTrigger("enemy2Range1Idle");
+            }
+            else if(enemyName == "Enemy 2 Range 2")
+            {
+                animator.SetTrigger("enemy2Range2Idle");
+            }
+            else if(enemyName == "Boss 1" && !isDead)
+            {
+                animator.SetTrigger("boss1Idle");
+            }
+            else if (enemyName == "Boss 2" & !isDead)
+            {
+                animator.SetTrigger("boss2Idle");
             }
         }
     }
@@ -679,6 +910,26 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
         {
             animator.SetTrigger("enemy1Range2Hurt");
         }
+        else if(enemyName == "Enemy 2 Melee")
+        {
+            animator.SetTrigger("enemy2MeleeHurt");
+        }
+        else if (enemyName == "Enemy 2 Range 1")
+        {
+            animator.SetTrigger("enemy2Range1Hurt");
+        }
+        //else if (enemyName == "Enemy 2 Range 2") //This enemy currently does not have a hurt animation
+        //{
+        //    animator.SetTrigger("enemy2Range2Hurt");
+        //}
+        else if (enemyName == "Boss 1" && !isDead)
+        {
+            animator.SetTrigger("boss1Hurt");
+        }
+        //else if (enemyName == "Boss 2" & !isDead) //no hurt animation
+        //{
+        //    animator.SetTrigger("boss2Hurt");
+        //}
     }
 
 	void setWalk() //triggers walk animation
@@ -693,6 +944,22 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
             else if(enemyName == "Enemy 1 Range 1")
             {
                 animator.SetTrigger("enemy1Range1Walk");
+            }
+            else if(enemyName == "Enemy 2 Melee")
+            {
+                animator.SetTrigger("enemy2MeleeWalk");
+            }
+            else if (enemyName == "Enemy 2 Range 1")
+            {
+                animator.SetTrigger("enemy2Range1Walk");
+            }
+            else if (enemyName == "Boss 1" && !isDead)
+            {
+                animator.SetTrigger("boss1Walk");
+            }
+            else if (enemyName == "Boss 2" & !isDead)
+            {
+                animator.SetTrigger("boss2Walk");
             }
         }
     }
@@ -713,7 +980,54 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
             {
                 animator.SetTrigger("enemy1Range2Attack");
             }
+            else if(enemyName == "Enemy 2 Melee")
+            {
+                animator.SetTrigger("enemy2MeleeAttack");
+            }
+            else if (enemyName == "Enemy 2 Range 1")
+            {
+                animator.SetTrigger("enemy2Range1Attack");
+            }
+            else if (enemyName == "Enemy 2 Range 2")
+            {
+                animator.SetTrigger("enemy2Range2Attack");
+            }
+            else if (enemyName == "Boss 1" && !isDead)
+            {
+                animator.SetTrigger("boss1Attack");
+            }
+            else if (enemyName == "Boss 2" & !isDead)
+            {
+                animator.SetTrigger("boss2Attack");
+            }
         }
+    }
+
+    void setSummon()
+    {
+        if(!isHurt)
+        {
+            if (enemyName == "Boss 1" & !isDead)
+            {
+                animator.SetTrigger("boss1Summon");
+            }
+            else if (enemyName == "Boss 2" & !isDead)
+            {
+                animator.SetTrigger("boss2Summon");
+            }
+        }
+    }
+
+    void setDeath()
+    {
+        if (enemyName == "Boss 1")
+        {
+            animator.SetTrigger("boss1Death");
+        }
+        //if(enemyName == "Boss 2") //no death animation
+        //{
+        //    animator.SetTrigger("boss2Death");
+        //}
     }
 
     void FixedUpdate()
@@ -724,27 +1038,10 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
 	{
         if(!isHurt) //cannot flip if hurt
         {
-            if (enemyName == "Enemy 1 Melee") //enemy1Melee only flips if it is allowed to flip
-            {
-                isFacingRight = !isFacingRight;
-                Vector3 enemyScale = transform.localScale;
-                enemyScale.x *= -1;
-                transform.localScale = enemyScale;
-            }
-            else if (enemyName == "Enemy 1 Range 1")
-            {
-                isFacingRight = !isFacingRight;
-                Vector3 enemyScale = transform.localScale;
-                enemyScale.x *= -1;
-                transform.localScale = enemyScale;
-            }
-            else if (enemyName != "Enemy 1 Melee" && enemyName != "Enemy 1 Range 1")
-            {
-                isFacingRight = !isFacingRight;
-                Vector3 enemyScale = transform.localScale;
-                enemyScale.x *= -1;
-                transform.localScale = enemyScale;
-            }
+            isFacingRight = !isFacingRight;
+            Vector3 enemyScale = transform.localScale;
+            enemyScale.x *= -1;
+            transform.localScale = enemyScale;
         }
 	}
 
@@ -770,6 +1067,79 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
             }
         }
         else if(enemyName == "Enemy 1 Range 1")
+        {
+            if (touchedGround && !groundObtained)
+            {
+                if (transform.position.y != patrolRightEnd.y)
+                {
+                    patrolRightEnd.y = transform.position.y;
+                }
+                if (transform.position.x != patrolLeftEnd.y)
+                {
+                    patrolLeftEnd.y = transform.position.y;
+                }
+                if (transform.position.y != spawnY)
+                {
+                    spawnY = transform.position.y;
+                }
+                groundObtained = true;
+            }
+        }
+        else if(enemyName == "Enemy 2 Melee")
+        {
+            if (transform.position.y != patrolRightEnd.y)
+            {
+                patrolRightEnd.y = transform.position.y;
+            }
+            if (transform.position.x != patrolLeftEnd.y)
+            {
+                patrolLeftEnd.y = transform.position.y;
+            }
+            if (transform.position.y != spawnY)
+            {
+                spawnY = transform.position.y;
+            }
+            groundObtained = true;
+        }
+        else if (enemyName == "Enemy 2 Range 1")
+        {
+            if (touchedGround && !groundObtained)
+            {
+                if (transform.position.y != patrolRightEnd.y)
+                {
+                    patrolRightEnd.y = transform.position.y;
+                }
+                if (transform.position.x != patrolLeftEnd.y)
+                {
+                    patrolLeftEnd.y = transform.position.y;
+                }
+                if (transform.position.y != spawnY)
+                {
+                    spawnY = transform.position.y;
+                }
+                groundObtained = true;
+            }
+        }
+        else if(enemyName == "Boss 1")
+        {
+            if (touchedGround && !groundObtained)
+            {
+                if (transform.position.y != patrolRightEnd.y)
+                {
+                    patrolRightEnd.y = transform.position.y;
+                }
+                if (transform.position.x != patrolLeftEnd.y)
+                {
+                    patrolLeftEnd.y = transform.position.y;
+                }
+                if (transform.position.y != spawnY)
+                {
+                    spawnY = transform.position.y;
+                }
+                groundObtained = true;
+            }
+        }
+        else if(enemyName == "Boss 2")
         {
             if (touchedGround && !groundObtained)
             {
@@ -854,6 +1224,10 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
                     Debug.Log("Enemy hit with pipe!");
                     playerController.takeDamage(meleeDamage);
                 }
+            }
+            else if(enemyName == "Enemy 2 Melee")
+            {
+                playerController.takeDamage(meleeDamage);
             }
         }
     }
