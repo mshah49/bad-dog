@@ -64,7 +64,6 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
     public float attackDuration;
     public bool isAttacking;
     public bool attackLaunched;
-    public float enemyProjectileSpeed;
     public float rangeDamage;
     public GameObject enemyProjectile;
     public Transform enemyGunTip;
