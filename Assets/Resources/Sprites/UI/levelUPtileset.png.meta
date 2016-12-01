@@ -1,11 +1,9 @@
 fileFormatVersion: 2
-guid: cad863587d2265d429b7e83ccfaf3fdd
-timeCreated: 1475916478
+guid: afc886bc8ef3c764e8c9ad4b18e07646
+timeCreated: 1480619024
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: enemy1MeleeHurt_0
-    21300002: enemy1MeleeHurt_1
+  fileIDToRecycleName: {}
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -53,33 +51,7 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: enemy1MeleeHurt_0
-      rect:
-        serializedVersion: 2
-        x: 2
-        y: 67
-        width: 61
-        height: 49
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: enemy1MeleeHurt_1
-      rect:
-        serializedVersion: 2
-        x: 2
-        y: 3
-        width: 61
-        height: 49
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
+    sprites: []
     outline: []
   spritePackingTag: 
   userData: 

@@ -1,15 +1,17 @@
 fileFormatVersion: 2
-guid: 843758149e06f5e4b9db962ca346c64e
-timeCreated: 1480564112
+guid: 9c307d7bc880f4b47bbc7cb56250a1bf
+timeCreated: 1480618264
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: enemy2MeleeIdle_0
-    21300002: enemy2MeleeIdle_1
-    21300004: enemy2MeleeIdle_2
-    21300006: enemy2MeleeIdle_3
-    21300008: enemy2MeleeIdle_4
-    21300010: enemy2MeleeIdle_5
+    21300000: titleBadDog_0
+    21300002: titleBadDog_1
+    21300004: titleBadDog_2
+    21300006: titleBadDog_3
+    21300008: titleBadDog_4
+    21300010: titleBadDog_5
+    21300012: titleBadDog_6
+    21300014: titleBadDog_7
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -59,78 +61,104 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: enemy2MeleeIdle_0
+      name: titleBadDog_0
       rect:
         serializedVersion: 2
-        x: 12
-        y: 332
-        width: 25
-        height: 46
+        x: 0
+        y: 616
+        width: 256
+        height: 88
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: enemy2MeleeIdle_1
+      name: titleBadDog_1
       rect:
         serializedVersion: 2
-        x: 12
-        y: 268
-        width: 27
-        height: 46
+        x: 0
+        y: 528
+        width: 256
+        height: 88
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: enemy2MeleeIdle_2
+      name: titleBadDog_2
       rect:
         serializedVersion: 2
-        x: 12
-        y: 204
-        width: 27
-        height: 46
+        x: 0
+        y: 440
+        width: 256
+        height: 88
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: enemy2MeleeIdle_3
+      name: titleBadDog_3
       rect:
         serializedVersion: 2
-        x: 12
-        y: 140
-        width: 28
-        height: 46
+        x: 0
+        y: 352
+        width: 256
+        height: 88
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: enemy2MeleeIdle_4
+      name: titleBadDog_4
       rect:
         serializedVersion: 2
-        x: 12
-        y: 76
-        width: 22
-        height: 46
+        x: 0
+        y: 264
+        width: 256
+        height: 88
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: enemy2MeleeIdle_5
+      name: titleBadDog_5
       rect:
         serializedVersion: 2
-        x: 12
-        y: 12
-        width: 22
-        height: 46
+        x: 0
+        y: 176
+        width: 256
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: titleBadDog_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 88
+        width: 256
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: titleBadDog_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 88
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
