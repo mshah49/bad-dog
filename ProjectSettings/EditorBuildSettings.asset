@@ -11,3 +11,5 @@ EditorBuildSettings:
     path: Assets/Resources/Scenes/gameStart.unity
   - enabled: 1
     path: Assets/Resources/Scenes/level1.unity
+  - enabled: 1
+    path: Assets/Resources/Scenes/levels/duel2Level1.unity
