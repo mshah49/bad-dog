@@ -17,7 +17,6 @@ public class EnemyBulletController : MonoBehaviour {
         enemyController = enemy.GetComponent<EnemyController>();
         playerController = player.GetComponent<playerController>();
         rb2d = GetComponent<Rigidbody2D>();
-        speed = enemyController.enemyProjectileSpeed;
         if (transform.localRotation.z > 0)
             rb2d.AddForce(new Vector2(-1 * speed, 0), ForceMode2D.Impulse);
         else
@@ -34,6 +33,11 @@ public class EnemyBulletController : MonoBehaviour {
         if(other.tag == "Player")
         {
             playerController.takeDamage(enemyController.rangeDamage);
+            Destroy(gameObject);
+        }
+
+        if(other.tag == "Ground")
+        {
             Destroy(gameObject);
         }
     }
