@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
-
 public class playerHealthController : MonoBehaviour{
 
 
@@ -9,9 +8,13 @@ public class playerHealthController : MonoBehaviour{
 	public float currentHP =100;
 	public float maxHP = 100;
 	public Slider healthSlider;  
+	public bool test;
+	public GameObject currentCheckpoint;
+		public GameManager gameManager;
 
 	// Use this for initialization
 	void awake(){
+		test = false;
 	}
 	void Start () {
 
@@ -32,7 +35,10 @@ public class playerHealthController : MonoBehaviour{
 		currentHP -= damage;
 		healthSlider.value = currentHP;
 		if (currentHP <= 0) {
-			killPlayer ();
+			test = true;
+				gameManager.respawnPlayer ();
+			currentHP = maxHP;
+			//killPlayer ();
 		}
 
 	}

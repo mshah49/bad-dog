@@ -124,6 +124,7 @@ MonoBehaviour:
   rb2d: {fileID: 0}
   enemyController: {fileID: 0}
   playerController: {fileID: 0}
+  bulletDamage: 3
 --- !u!212 &212000010133619032
 SpriteRenderer:
   m_ObjectHideFlags: 1

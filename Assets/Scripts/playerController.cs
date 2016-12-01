@@ -218,11 +218,16 @@ public class playerController : MonoBehaviour {
 
 	//attack 
 	void fireRocket(){
-		if (FacingRight) {
+		if(Input.GetKey(KeyCode.UpArrow)){
+			print ("up");
+			Instantiate (bullet, gunTip.position, Quaternion.Euler (new Vector3 (0, 180, 0)));
+		}
+		else if (FacingRight) {
 			Instantiate (bullet, gunTip.position, Quaternion.Euler (new Vector3 (0, 0, 0)));
 		} else if (!FacingRight) {
 			Instantiate (bullet, gunTip.position, Quaternion.Euler (new Vector3 (0, 0, 180)));
 		}
+	
 	}
 
 	//changes animations

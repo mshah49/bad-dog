@@ -1,9 +1,46 @@
 fileFormatVersion: 2
 guid: afc886bc8ef3c764e8c9ad4b18e07646
-timeCreated: 1480619024
+timeCreated: 1480621735
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: levelUPtileset_0
+    21300002: levelUPtileset_1
+    21300004: levelUPtileset_2
+    21300006: levelUPtileset_3
+    21300008: levelUPtileset_4
+    21300010: levelUPtileset_5
+    21300012: levelUPtileset_6
+    21300014: levelUPtileset_7
+    21300016: levelUPtileset_8
+    21300018: levelUPtileset_9
+    21300020: levelUPtileset_10
+    21300022: levelUPtileset_11
+    21300024: levelUPtileset_12
+    21300026: levelUPtileset_13
+    21300028: levelUPtileset_14
+    21300030: levelUPtileset_15
+    21300032: levelUPtileset_16
+    21300034: levelUPtileset_17
+    21300036: levelUPtileset_18
+    21300038: levelUPtileset_19
+    21300040: levelUPtileset_20
+    21300042: levelUPtileset_21
+    21300044: levelUPtileset_22
+    21300046: levelUPtileset_23
+    21300048: levelUPtileset_24
+    21300050: levelUPtileset_25
+    21300052: levelUPtileset_26
+    21300054: levelUPtileset_27
+    21300056: levelUPtileset_28
+    21300058: levelUPtileset_29
+    21300060: levelUPtileset_30
+    21300062: levelUPtileset_31
+    21300064: levelUPtileset_32
+    21300066: levelUPtileset_33
+    21300068: levelUPtileset_34
+    21300070: levelUPtileset_35
+    21300072: levelUPtileset_36
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -51,7 +88,488 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: levelUPtileset_0
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 49
+        width: 402
+        height: 459
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: levelUPtileset_1
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 469
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: levelUPtileset_2
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 469
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: levelUPtileset_3
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 469
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: levelUPtileset_4
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 469
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: levelUPtileset_5
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 469
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: levelUPtileset_6
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 469
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: levelUPtileset_7
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 469
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: levelUPtileset_8
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 469
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: levelUPtileset_9
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 421
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: levelUPtileset_10
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 421
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: levelUPtileset_11
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 421
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: levelUPtileset_12
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 421
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: levelUPtileset_13
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 421
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: levelUPtileset_14
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 421
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: levelUPtileset_15
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 374
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: levelUPtileset_16
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 374
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: levelUPtileset_17
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 374
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: levelUPtileset_18
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 374
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: levelUPtileset_19
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 374
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: levelUPtileset_20
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 374
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: levelUPtileset_21
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 374
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: levelUPtileset_22
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 325
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: levelUPtileset_23
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 325
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: levelUPtileset_24
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 325
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: levelUPtileset_25
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 323
+        width: 132
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: levelUPtileset_26
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 260
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: levelUPtileset_27
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 260
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: levelUPtileset_28
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 260
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: levelUPtileset_29
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 260
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: levelUPtileset_30
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 260
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: levelUPtileset_31
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 260
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: levelUPtileset_32
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 258
+        width: 132
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: levelUPtileset_33
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 162
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: levelUPtileset_34
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 162
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: levelUPtileset_35
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 162
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: levelUPtileset_36
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 162
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 

@@ -9,6 +9,7 @@ public class EnemyBulletController : MonoBehaviour {
     public Rigidbody2D rb2d;
     public EnemyController enemyController;
     public playerController playerController;
+	public float bulletDamage;
 
 	// Use this for initialization
 	void Awake () {
@@ -32,7 +33,7 @@ public class EnemyBulletController : MonoBehaviour {
     {
         if(other.tag == "Player")
         {
-            playerController.takeDamage(enemyController.rangeDamage);
+            playerController.takeDamage(bulletDamage);
             Destroy(gameObject);
         }
 

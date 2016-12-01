@@ -14,6 +14,6 @@ public class startGame : MonoBehaviour {
 	}
 
 	public void LoadStage()  {
-		Application.LoadLevel ("duel2Level1");
+		Application.LoadLevel ("level1");
 	}
 }

@@ -36,11 +36,7 @@ public class enemyHealth : MonoBehaviour {
         currentHP -= damage;
 		if (currentHP <= 0) {
 			enemyEXP (expGain);
-            if(enemy.enemyName.Contains("Boss") && enemy.deathTimerCountdown <= 0)
-            {
-                test = true;
-                killEnemy();
-            }
+				killEnemy ();
 		}
 
 	}
@@ -52,6 +48,7 @@ public class enemyHealth : MonoBehaviour {
 	}
 
 	void killEnemy(){
+		
 		Destroy(gameObject);
 	}
 }

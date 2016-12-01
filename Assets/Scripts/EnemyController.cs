@@ -80,10 +80,12 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
     public float deathTimer;
     public float deathTimerCountdown;
     public bool isDead;
+	public float temp;
 
 	// Use this for initialization
 	void Awake () {
         test = false;
+		temp = 0;
         player = GameObject.FindGameObjectWithTag("Player");
 		animator = GetComponent<Animator>();
         enemyHP = GetComponent<enemyHealth>(); //gets enemyHealth component from inspector
@@ -235,7 +237,7 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
         }
         else if(enemyName == "Enemy 1 Range 2")
         {
-            range = 10f;
+            range = 20f;
             enemyMaxSpeed = 2.5f;
             attackCooldownTimer = 4f;
             attackMaxLength = .6f;
@@ -269,7 +271,7 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
         }
         else if (enemyName == "Enemy 2 Range 2")
         {
-            range = 10f;
+            range = 20f;
             enemyMaxSpeed = 2.5f;
             attackCooldownTimer = 4f;
             attackMaxLength = .6f;
@@ -307,7 +309,6 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
             Flip();
             summonActionTimer = .8f;
             maxSummonCount = 3;
-            test = true;
             //deathTimer = .8f; //unused
         }
     }
@@ -362,10 +363,17 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
                 hurtTestComplete = true;
                 hurtTest = false;
             }
-            if (inAttackRange)
-            {
-                enemyMaxSpeed = 12f;
-            }
+			if (inAttackRange) {
+				enemyMaxSpeed = 12f;
+			} else {
+				if (enemyName.Contains ("Melee")) {
+					enemyMaxSpeed = 3f;
+				} else if (enemyName.Contains ("Range")) {
+					enemyMaxSpeed = 2.5f;
+				} else if (enemyName.Contains ("Boss")) {
+					enemyMaxSpeed = 3f;
+				}
+			}
         }
         if(enemyName == "Boss 1" && !isDead)
         {
@@ -918,18 +926,18 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
         {
             animator.SetTrigger("enemy2Range1Hurt");
         }
-        //else if (enemyName == "Enemy 2 Range 2") //This enemy currently does not have a hurt animation
-        //{
-        //    animator.SetTrigger("enemy2Range2Hurt");
-        //}
+        else if (enemyName == "Enemy 2 Range 2") //This enemy currently does not have a hurt animation
+        {
+            animator.SetTrigger("enemy2Range2Hurt");
+        }
         else if (enemyName == "Boss 1" && !isDead)
         {
             animator.SetTrigger("boss1Hurt");
         }
-        //else if (enemyName == "Boss 2" & !isDead) //no hurt animation
-        //{
-        //    animator.SetTrigger("boss2Hurt");
-        //}
+        else if (enemyName == "Boss 2" & !isDead) //no hurt animation
+        {
+            animator.SetTrigger("boss2Hurt");
+        }
     }
 
 	void setWalk() //triggers walk animation
@@ -1212,23 +1220,19 @@ public class EnemyController : MonoBehaviour { //NOTE: many of these variables w
         if(other.tag == "Player")
         {
             playerController playerController = player.GetComponent<playerController>();
-            if (enemyName == "Enemy 1 Melee")
-            {
-                if (enemyMaxSpeed == 12)
-                {
-                    Debug.Log("Enemy rammed!");
-                    playerController.takeDamage(ramDamage);
-                }
-                else
-                {
-                    Debug.Log("Enemy hit with pipe!");
-                    playerController.takeDamage(meleeDamage);
-                }
-            }
-            else if(enemyName == "Enemy 2 Melee")
-            {
-                playerController.takeDamage(meleeDamage);
-            }
+			if (enemyName == "Enemy 1 Melee") {
+				if (enemyMaxSpeed == 12) {
+					Debug.Log ("Enemy rammed!");
+					playerController.takeDamage (ramDamage);
+				} else {
+					Debug.Log ("Enemy hit with pipe!");
+					playerController.takeDamage (meleeDamage);
+				}
+			} else if (enemyName == "Enemy 2 Melee") {
+				playerController.takeDamage (meleeDamage);
+			} else if (enemyName == "Boss 2") {
+				playerController.takeDamage (meleeDamage);
+			}
         }
     }
 }

@@ -39,11 +39,13 @@ public class bulletPhysics : MonoBehaviour {
 		if (playerController.currentStance == playerController.playerStance.brawler) {
 			animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController> ("AnimationControllers/playerBrawlerProjectile");
 			print ("brawler");
-		}
-		else if (playerController.currentStance == playerController.playerStance.mobility) {
+		} else if (playerController.currentStance == playerController.playerStance.heavy) {
+			animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController> ("AnimationControllers/playerHeavyProjectile");
+			print ("Heavy");
+		} else if (playerController.currentStance == playerController.playerStance.mobility) {
 			animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController> ("AnimationControllers/playerMobileProjectile");
 			print ("mobility");
-		}	
+		}
 	
 		//depending on stance, change the animation of the projectile
 
