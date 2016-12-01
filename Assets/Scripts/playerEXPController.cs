@@ -11,6 +11,7 @@ public class playerEXPController : MonoBehaviour{
 
 	// Use this for initialization
 	void awake(){
+		EXPSlider.value = currentEXP;
 	}
 	void Start () {
 

@@ -227,7 +227,7 @@ public class playerController : MonoBehaviour {
 
 	//changes animations
 	private IEnumerator ChangeAnimatorController(string name) {
-
+		animator = GetComponent<Animator> ();
 		// Assign our new animator controller
 		animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>(name);
 

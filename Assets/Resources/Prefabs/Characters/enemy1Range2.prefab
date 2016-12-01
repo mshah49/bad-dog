@@ -184,7 +184,6 @@ MonoBehaviour:
   attackDuration: 0
   isAttacking: 0
   attackLaunched: 0
-  enemyProjectileSpeed: 0
   rangeDamage: 0
   enemyProjectile: {fileID: 1000012308778796, guid: 830a56a8008ed634ba9567f72c82a0ff,
     type: 2}

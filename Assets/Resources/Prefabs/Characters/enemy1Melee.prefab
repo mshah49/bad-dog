@@ -84,8 +84,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000014007162566}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 36, y: -2, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.22, y: -2.73, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -244,7 +244,6 @@ MonoBehaviour:
   attackDuration: 0
   isAttacking: 0
   attackLaunched: 0
-  enemyProjectileSpeed: 0
   rangeDamage: 0
   enemyProjectile: {fileID: 0}
   enemyGunTip: {fileID: 0}

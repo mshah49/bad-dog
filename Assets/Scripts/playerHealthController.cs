@@ -12,6 +12,7 @@ public class playerHealthController : MonoBehaviour{
 
 	// Use this for initialization
 	void awake(){
+		healthSlider.value = currentHP;
 	}
 	void Start () {
 
