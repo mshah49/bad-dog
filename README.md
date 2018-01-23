@@ -1,2 +1,2 @@
 # Bad Dog! Read Me 
-## Game Development Class 2016 Game Project
+## University of Houston COSC4358: Introduction to Interactive Game Development 2016 Project
